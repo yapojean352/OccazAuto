@@ -1,0 +1,28 @@
+.puce{
+    content: "\f054";
+    background-color: rgb(151, 19, 19);
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: FontAwesome;
+}
+.O , .C{
+    float: right;
+}
+/* .menubf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.733);
+    flex-basis: 100%;
+    cursor: pointer;
+} */
+
+.menubp{
+    background-color: rgb(53, 16, 16);
+    width: 100%;
+}
+.afficher li {
+    background-color: rgb(13, 167, 38);
+    width: 100%;
+}

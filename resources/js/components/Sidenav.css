@@ -1,0 +1,35 @@
+.container-masque{
+    display: flex;
+    /* background-color: rgb(209, 245, 49); */
+    margin: 5px;
+}
+#masque-af{
+    flex-basis: 100%;
+    /* background-color: rgb(9, 17, 9); */
+  
+   
+
+}
+/* chevron fermer */
+.C:after {
+    content: "\f054";
+    font-size: 20px;
+    cursor: pointer;
+
+    font-family: FontAwesome;
+}
+/* chevron ouvert */
+.O:after {
+    content: "\f078";
+    font-size: 20px;
+    cursor: pointer;
+    font-family: FontAwesome;
+}
+.menubf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.733);
+    flex-basis: 100%;
+    cursor: pointer;
+}

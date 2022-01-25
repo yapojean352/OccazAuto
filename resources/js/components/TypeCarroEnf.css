@@ -1,0 +1,10 @@
+.child-carro-container{
+    background-color: rgb(209, 118, 118);
+    min-width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+.type__carro__info{
+    display: flex;
+    flex-direction: row;
+}

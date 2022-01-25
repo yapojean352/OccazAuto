@@ -1,0 +1,9 @@
+.partenaire{
+    min-height: 200px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #6218a8 0%, #e05cd5 100%);
+}

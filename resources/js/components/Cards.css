@@ -1,0 +1,185 @@
+.cards {
+  display: flex;
+  align-content: center;
+  width: 100%;
+    }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .cards__container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* max-width: 1120px; */
+    width: 100%; 
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  .cards__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(167, 201, 18); */
+  
+  }
+  
+  .cards__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   width: 100%;
+   justify-content: center;
+    /* margin-bottom: 24px; */
+  }
+  
+  .cards__item {
+    display: flex;
+    flex: 1;
+  }
+  
+  .cards__item__link {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .cards__item__pic-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 67%;
+    overflow: hidden;
+  }
+  .cards__item__img{
+    position: relative;
+  }
+  
+  .fade-img {
+    animation-name: fade-img;
+    animation-duration: 2s;
+  }
+/* ajout du card aventure dans limage   */
+  .cards__item__pic-wrap::after {
+    content: attr(data-category);
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    padding: 6px 8px;
+    min-width: calc((100%) - 60px);
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #a71b1b;
+    box-sizing: border-box;
+  }
+
+  
+  .cards__item__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: all 0.2s linear;
+  }
+  .cards{
+    height: auto;
+  }
+  .cards__item :hover{
+    /* background-color: rgba(116, 230, 10, 0.788); */
+  }
+  
+  .cards__item__img::after{
+     content: attr(data-category);
+     position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    padding: 6px 8px;
+    max-width: calc((100%));
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1f98f4;
+    box-sizing: border-box;
+  }
+ 
+  .cards__item__img:hover {
+    /* transform: scale(2.1); */
+    background-color: turquoise;
+  }
+     .cards__item__img::after{
+    content: attr(data-survol);
+    position: absolute;
+    top: 0;
+   
+     }  
+     /* .container{
+      position: relative;
+  } */
+  /* .overlay{
+      position: absolute;
+      background-color: rgb(70, 12, 12);
+  } */
+  .overlay:hover .overleyFade{
+    width: 100%;
+  }
+     .overleyFade{
+       width:0%;
+       height: 100%;
+       background-color: rgb(32, 17, 17);
+       opacity: 0.5;
+     }
+  .cards__item__pic-wrap:hover{
+    
+
+}
+  .cards__items {
+    display: flex;
+   align-content: center;
+    height: auto;
+    
+  }
+  
+  .cards__item__info {
+    padding: 20px 30px 30px;
+  }
+  
+  .cards__item__text {
+    color: #252e48;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .content__blog__container {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .cards__items {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .cards__item {
+      margin-bottom: 2rem;
+    }
+  }
+  
