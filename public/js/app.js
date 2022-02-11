@@ -1979,6 +1979,61 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Avendreinfo.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/Avendreinfo.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Catalogue_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Catalogue.css */ "./resources/js/components/Catalogue.css");
+
+
+
+
+
+function Avendreinfo() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "catalogue-display ",
+    "data-post-type": "auto-usager",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "catalogue-container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "row",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "columns listing-column",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            children: "Resultats"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              className: "products",
+              children: "Avendre"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "page-title",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "page-title-panel",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                children: " *Informez-vous! + de 500 AUTRES V\xC9HICULES et camions d\u2019occasion sur place. Plus de 6000 autres disponibles sur demande **WE SPEAK ENGLISH TOO! SO DON\u2019T HESITATE TO CALL US OR TO COME SEE US Plusieurs Nissan Versa Note et Versions disponibles : S, SV, SL Nos conseillers certifi\xE9s et professionnels sauront vous offrir une exp\xE9rience d\u2019achat personnalis\xE9e et conviviale pour l\u2019achat de votre nouveau v\xE9hicule. Certains accessoires additionnels en sus. Sans droit de r\xE9tention. Bien que nous ayons pris toutes les mesures raisonnables pour nous assurer de la pr\xE9cision des renseignements fournis, nous ne sommes pas responsables de toute erreur ou omission. Veuillez contre-v\xE9rifier les renseignements aupr\xE8s de l\u2019un de nos experts. Dans le cas o\xF9 un v\xE9hicule publi\xE9 contiendrait des renseignements inexacts \xE0 cause d'une erreur typographique, photographique, sur le prix ou autre, le concessionnaire se r\xE9serve le droit de refuser ou d'annuler toute demande. Contactez-nous aussi pour en savoir plus sur nos rabais additionnels en concession."
+              })
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Avendreinfo);
+
+/***/ }),
+
 /***/ "./resources/js/components/Boutton.js":
 /*!********************************************!*\
   !*** ./resources/js/components/Boutton.js ***!
@@ -2157,14 +2212,17 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
     _this.state = [{
       "num_models": 3,
       "img_url": "http://www.carlogos.org/uploads/car-logos/Chrysler-logo-1.jpg",
+      "url": "detail-1",
       "max_car_id": 104,
       "id": 1,
       "name": "chrysler",
+      "categorie": "voiture",
       "avg_horsepower": 291.3333333333333,
       "avg_price": 32971.666666666664
     }, {
       "num_models": 8,
       "img_url": "http://www.carlogos.org/uploads/car-logos/Honda-logo-1.jpg",
+      "url": "detail-2",
       "max_car_id": 152,
       "id": 2,
       "name": "honda",
@@ -2173,6 +2231,7 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
     }, {
       "num_models": 18,
       "img_url": "http://www.carlogos.org/uploads/car-logos/Mercedes-Benz-logo-1.jpg",
+      "url": "detail-3",
       "max_car_id": 270,
       "id": 3,
       "name": "mercedes-benz",
@@ -2181,6 +2240,7 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
     }, {
       "num_models": 6,
       "img_url": "http://www.carlogos.org/uploads/car-logos/Ram-logo-1.jpg",
+      "url": "detail-4",
       "max_car_id": 307,
       "id": 4,
       "name": "ram",
@@ -2202,12 +2262,13 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
               className: "cards__items",
               children: this.state.map(function (carInfo, i) {
+                // alert(i);
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_2__.default, {
                     src: "images/img-9.jpg",
                     text: carInfo.name,
                     label: carInfo.avg_price,
-                    path: "/CAR-REACT/public/detail-produit-1"
+                    path: "".concat(carInfo.name, "/").concat(carInfo.id)
                   })
                 });
               })
@@ -2318,6 +2379,61 @@ function Catalogue() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Catalogue);
+
+/***/ }),
+
+/***/ "./resources/js/components/Detailproduct.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Detailproduct.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Catalogue_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Catalogue.css */ "./resources/js/components/Catalogue.css");
+
+
+
+
+
+function Detailproduct() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "catalogue-display ",
+    "data-post-type": "auto-usager",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "catalogue-container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "row",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "columns listing-column",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            children: "Resultats"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              className: "products",
+              children: "DETAILS PRODUCT"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "page-title",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "page-title-panel",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+                children: "Barrel Color: Black Barrel Finish: Satin Barrel Length (in)/(cm): 22 / 55.9 Barrel Material: Carbon Steel Magazine Capacity: 10"
+              })
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Detailproduct);
 
 /***/ }),
 
@@ -2750,13 +2866,13 @@ function HeroSection() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "btns-hero",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Boutton__WEBPACK_IMPORTED_MODULE_2__.Boutton, {
-        lien: "/CAR-REACT/public/vehicule-usager",
+        lien: "/OccazAuto/public/vehicule-usager",
         className: "btns",
         buttonStyle: "btn--outline",
         buttonSize: "btn--large",
         children: "Trouver votre Auto"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Boutton__WEBPACK_IMPORTED_MODULE_2__.Boutton, {
-        lien: "/CAR-REACT/public/A-vendre",
+        lien: "/OccazAuto/public/A-vendre",
         className: "btns",
         buttonStyle: "btn--primary",
         buttonSize: "btn--large",
@@ -3553,32 +3669,6 @@ function Partenaires() {
 
 /***/ }),
 
-/***/ "./resources/js/components/PiedPage.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/PiedPage.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _PiedPage_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PiedPage.css */ "./resources/js/components/PiedPage.css");
-
-
-
-
-function PiedPage() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {});
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PiedPage);
-
-/***/ }),
-
 /***/ "./resources/js/components/Root.js":
 /*!*****************************************!*\
   !*** ./resources/js/components/Root.js ***!
@@ -3600,11 +3690,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/components/pages/Home.js");
-/* harmony import */ var _pages_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/service */ "./resources/js/components/pages/service.js");
+/* harmony import */ var _pages_Avendre__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Avendre */ "./resources/js/components/pages/Avendre.js");
 /* harmony import */ var _pages_product__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/product */ "./resources/js/components/pages/product.js");
 /* harmony import */ var _pages_SignUp__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/SignUp */ "./resources/js/components/pages/SignUp.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
-/* harmony import */ var _PiedPage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./PiedPage */ "./resources/js/components/PiedPage.js");
+/* harmony import */ var _pages_Singlepage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/Singlepage */ "./resources/js/components/pages/Singlepage.js");
 
 
 
@@ -3671,13 +3761,16 @@ function Root() {
             component: _pages_Home__WEBPACK_IMPORTED_MODULE_6__.default
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
             path: "/OccazAuto/public/A-vendre",
-            component: _pages_service__WEBPACK_IMPORTED_MODULE_7__.default
+            component: _pages_Avendre__WEBPACK_IMPORTED_MODULE_7__.default
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
             path: "/OccazAuto/public/vehicule-usager",
             component: _pages_product__WEBPACK_IMPORTED_MODULE_8__.default
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
             path: "/OccazAuto/public/signUp",
             component: _pages_SignUp__WEBPACK_IMPORTED_MODULE_9__.default
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+            path: "/OccazAuto/public/chrysler",
+            component: _pages_Singlepage__WEBPACK_IMPORTED_MODULE_11__.default
           })]
         })]
       })
@@ -3953,6 +4046,37 @@ function TypeCarroFilter() {
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/Avendre.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/pages/Avendre.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Avendreinfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Avendreinfo */ "./resources/js/components/Avendreinfo.js");
+
+
+
+
+
+function Avendre() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Avendreinfo__WEBPACK_IMPORTED_MODULE_2__.default, {})
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Avendre);
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/Home.js":
 /*!***********************************************!*\
   !*** ./resources/js/components/pages/Home.js ***!
@@ -4003,12 +4127,84 @@ __webpack_require__.r(__webpack_exports__);
 
 function SignUp() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "home-container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
       className: "sign-up",
       children: "Sign-Up"
     })
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/Singlepage.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/pages/Singlepage.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Singlepage
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Detailproduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Detailproduct */ "./resources/js/components/Detailproduct.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Singlepage = /*#__PURE__*/function (_Component) {
+  _inherits(Singlepage, _Component);
+
+  var _super = _createSuper(Singlepage);
+
+  function Singlepage() {
+    _classCallCheck(this, Singlepage);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(Singlepage, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Detailproduct__WEBPACK_IMPORTED_MODULE_2__.default, {})
+        })
+      });
+    }
+  }]);
+
+  return Singlepage;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+
 
 /***/ }),
 
@@ -4040,33 +4236,6 @@ function Product() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Catalogue__WEBPACK_IMPORTED_MODULE_2__.default, {})
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/service.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/pages/service.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ Service
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-
-function Service() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-      className: "services",
-      children: "Vendre vos voitures chez nous"
     })
   });
 }
@@ -8796,30 +8965,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".partenaire{\r\n    min-height: 200px; \r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);\r\n    background: linear-gradient(90deg, #6218a8 0%, #e05cd5 100%);\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/PiedPage.css":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/PiedPage.css ***!
-  \********************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ===============footer style =============== */\r\nfooter{\r\n    flex-basis:calc(100% - 40px);\r\n    flex-shrink: 0;\r\n    height: 100%;\r\n    position: relative;\r\n    background-color: rgba(27, 32, 39, 0.918);\r\n   \r\n    \r\n  }\r\n  .centrer{\r\n    max-width: 1168px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n  }\r\n  .contenu{\r\n    /* Générer un nouveau contexte d'affichage\r\n          en grille avec gouttières pour les enfants */\r\n        display: flex;\r\n      flex-wrap: wrap;\r\n        margin-left: -20px;\r\n  } \r\n  .contenu >*{ \r\n      /* Utiliser pour montrer le problème*/\r\n      /*background-color: aqua; */\r\n      flex-basis: calc(20% - 40px);\r\n     color:#8F8F8F;\r\n        margin-top: 20px;\r\n      margin-left: 20px;\r\n      min-width: 200px;\r\n      flex-grow: 1;\r\n     \r\n     \r\n  } \r\n  \r\n  .cadres h2 {\r\n    color: rgba(245, 245, 250, 0.822);\r\n    font-size: 20px;\r\n  }\r\n  .cadres p{\r\n   color:#8F8F8F;\r\n  }\r\n  .cadres>*  ,.flex-row>*{\r\n  \r\n    margin: 10px;\r\n  }\r\n  \r\n  .text-gray{\r\n    font-size: 16px;\r\n    color:#8F8F8F;\r\n    \r\n  }\r\n  .contenu .Support .formElement{\r\n    display: inline-block;\r\n  }\r\n  .contenu .Support .formElement input{\r\n    padding: .5rem .7rem;\r\n    border: none;\r\n    background:transparent;\r\n    color: white;\r\n    font-size: 1rem;\r\n    width: 74%;\r\n  }\r\n  .contenu .terme div>img{\r\n    display: inline-block;\r\n    width: 25%;\r\n    height: 50%;\r\n    margin: .3rem .4rem;\r\n  }\r\n  .contenu .suivre .social a{\r\n   padding: 0 .4rem;\r\n  }\r\n  .rights{\r\n    display: flex;\r\n    flex-direction: row ;\r\n    justify-content:center;\r\n    background-color: rgb(10, 1, 1);\r\n  \r\n  }\r\n  .up{\r\n    position: absolute;\r\n    right: 6%;\r\n    bottom: 10%;\r\n  }\r\n  .up span{\r\n    color:rgba(85, 85, 240, 0.835);\r\n  }\r\n  .up span:hover{\r\n    color:rgb(182, 182, 187);\r\n    cursor: pointer;\r\n  }\r\n  .erroFile{\r\n    color: red;\r\n  }\r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73461,36 +73606,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Partenaires_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
-/***/ "./resources/js/components/PiedPage.css":
-/*!**********************************************!*\
-  !*** ./resources/js/components/PiedPage.css ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PiedPage_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./PiedPage.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/PiedPage.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PiedPage_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PiedPage_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

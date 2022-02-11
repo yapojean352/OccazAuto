@@ -22,3 +22,9 @@ Route::get('/A-vendre', function () {
 Route::get('/vehicule-usager', function () {
     return view('react');
 });
+Route::get('/plus', function () {
+    return view('react');
+});
+Route::get('/chrysler', function () {
+    return view('react');
+});

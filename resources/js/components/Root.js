@@ -14,11 +14,11 @@ import {BrowserRouter as Router,
     } from "react-router-dom";
 
 import Home from './pages/Home';
-import Service from './pages/service';
+import Avendre from './pages/Avendre';
 import Product from './pages/product';
 import SignUp from './pages/SignUp';
 import Footer from './Footer';
-import PiedPage from './PiedPage';
+import Singlepage from './pages/Singlepage';
 
 //import Example from './Example';
 
@@ -71,10 +71,11 @@ function Root() {
                 <Menubar/>
                     <Switch> 
                       <Route path='/OccazAuto/public/' exact component={Home} />
-                      <Route path='/OccazAuto/public/A-vendre'  component={Service} />
+                      <Route path='/OccazAuto/public/A-vendre'  component={Avendre} />
                       <Route path='/OccazAuto/public/vehicule-usager'  component={Product} />
                       <Route path='/OccazAuto/public/signUp'  component={SignUp} />
-                    </Switch>        
+                      <Route path='/OccazAuto/public/chrysler'  component={Singlepage} />   
+                    </Switch>     
              </Router>  
              </div>
              {/* /*  voir le footer dans lequery version mobile*/ }

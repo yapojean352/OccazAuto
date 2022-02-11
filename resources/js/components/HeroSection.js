@@ -9,9 +9,9 @@ function HeroSection() {
             <strong> 100% EN LIGNE</strong>
              <p>LE PROCESSUS EST SIMPLE, SANS CONTACT ET À VOTRE ENTIÈRE SATISFACTION.</p>
             <div className='btns-hero'>
-                <Boutton lien="/CAR-REACT/public/vehicule-usager" className='btns' buttonStyle='btn--outline'
+                <Boutton lien="/OccazAuto/public/vehicule-usager" className='btns' buttonStyle='btn--outline'
                 buttonSize='btn--large'>Trouver votre Auto</Boutton>
-                 <Boutton lien="/CAR-REACT/public/A-vendre" className='btns' buttonStyle='btn--primary'
+                 <Boutton lien="/OccazAuto/public/A-vendre" className='btns' buttonStyle='btn--primary'
                 buttonSize='btn--large'>Vendre votre Auto</Boutton>
             </div>  
         </div>
