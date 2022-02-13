@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
+use App\Models\Auto;
 use Illuminate\Http\Request;
-use  App\Models\Auto;
+use App\Http\Controllers\Controller;
 
 class AutoController extends Controller
 {
@@ -17,6 +17,13 @@ class AutoController extends Controller
         $auto->save();
         return response()->json(['status'=>200,
            'message'=>'add success'
+
+        ]);
+    }
+    public function listProd(){
+      $autos = Auto::all();
+      return response()->json(['status'=>200,
+           'autos'=> $autos
 
         ]);
     }

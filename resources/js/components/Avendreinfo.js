@@ -11,7 +11,6 @@ function Avendreinfo() {
                  <div><h1 className="products">Avendre</h1></div> 
                  <div className="page-title">
                 <div className="page-title-panel">
-                
                  <span> *Informez-vous! + de 500 AUTRES VÉHICULES et camions d’occasion sur place. Plus de 6000 autres disponibles sur demande
 
 **WE SPEAK ENGLISH TOO! SO DON’T HESITATE TO CALL US OR TO COME SEE US

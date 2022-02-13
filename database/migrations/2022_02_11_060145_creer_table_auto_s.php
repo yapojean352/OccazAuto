@@ -13,17 +13,12 @@ class CreerTableAutoS extends Migration
      */
     public function up()
     {
-        Schema::create('auto', function (Blueprint $table) {
+        Schema::create('autos', function (Blueprint $table) {
              $table->id();
             $table->string('marque');
             $table->string('modele');
-            $table->string('num_serie');
-            $table->string('immatriculation');
-            $table->string('couleur');
             $table->string('prix');
             $table->string('km');
-            $table->string('detail');
-            $table->string('image');
             $table->timestamps();
         });
     }
@@ -35,6 +30,6 @@ class CreerTableAutoS extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('auto');
+        Schema::dropIfExists('autos');
     }
 }

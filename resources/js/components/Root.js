@@ -20,6 +20,7 @@ import SignUp from './pages/SignUp';
 import Footer from './Footer';
 import Singlepage from './pages/Singlepage';
 
+
 //import Example from './Example';
 
 
