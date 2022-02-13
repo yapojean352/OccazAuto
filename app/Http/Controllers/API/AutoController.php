@@ -14,5 +14,10 @@ class AutoController extends Controller
         $auto->modele=$request->input('modele');
         $auto->prix=$request->input('prix');
         $auto->km=$request->input('km');
+        $auto->save();
+        return response()->json(['status'=>200,
+           'message'=>'add success'
+
+        ]);
     }
 }
