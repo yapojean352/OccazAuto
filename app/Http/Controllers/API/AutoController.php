@@ -24,7 +24,15 @@ class AutoController extends Controller
       $autos = Auto::all();
       return response()->json(['status'=>200,
            'autos'=> $autos
-
+           
         ]);
     }
+    public function getProd($id){
+       
+        $auto= Auto::find($id);
+        return response()->json(['status'=>200,
+        'auto'=> $auto]);
+  
+      }
+    
 }

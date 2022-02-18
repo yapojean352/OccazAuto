@@ -2337,6 +2337,7 @@ qui recoit les props (infos) lorsque cet composant est utilisé
 */
 
 function CardItems(props) {
+  // console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     id: "un-item",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
@@ -2377,7 +2378,7 @@ function CardItems(props) {
         })]
       })
     })
-  });
+  }, props.keys);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardItems);
@@ -2446,49 +2447,7 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       autos: [],
       laoding: true
-    }; //{
-    //   "num_models": 3,
-    //   "img_url": "http://www.carlogos.org/uploads/car-logos/Chrysler-logo-1.jpg",
-    //   "url": "detail-1",
-    //   "max_car_id": 104,
-    //   "id": 1,
-    //   "name": "chrysler",
-    //   "categorie": "voiture",
-    //   "avg_horsepower": 291.3333333333333,
-    //   "avg_price": 32971.666666666664
-    // },
-    // {
-    //   "num_models": 8,
-    //   "img_url": "http://www.carlogos.org/uploads/car-logos/Honda-logo-1.jpg",
-    //   "url": "detail-2",
-    //   "max_car_id": 152,
-    //   "id": 2,
-    //   "name": "honda",
-    //   "avg_horsepower": 190.625,
-    //   "avg_price": 27965
-    // },
-    // {
-    //   "num_models": 18,
-    //   "img_url": "http://www.carlogos.org/uploads/car-logos/Mercedes-Benz-logo-1.jpg",
-    //   "url": "detail-3",
-    //   "max_car_id": 270,
-    //   "id": 3,
-    //   "name": "mercedes-benz",
-    //   "avg_horsepower": 333.94444444444446,
-    //   "avg_price": 80681.94444444444
-    // },
-    // {
-    //   "num_models": 6,
-    //   "img_url": "http://www.carlogos.org/uploads/car-logos/Ram-logo-1.jpg",
-    //   "url": "detail-4",
-    //   "max_car_id": 307,
-    //   "id": 4,
-    //   "name": "ram",
-    //   "avg_horsepower": 299.8333333333333,
-    //   "avg_price": 31406.666666666668
-    // }
-    //;
-
+    };
     return _this;
   }
 
@@ -2499,7 +2458,8 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().get('http://localhost:8000/api/list').then(function (response) {
         _this2.setState({
-          autos: response.data.autos
+          autos: response.data.autos,
+          laoding: false
         });
 
         console.log(response.data);
@@ -2515,10 +2475,32 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var contenHTML = "";
       var _this$state = this.state,
           autos = _this$state.autos,
           laoding = _this$state.laoding;
-      console.log(autos);
+
+      if (laoding) {
+        contenHTML = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+          children: "Laoding ..."
+        });
+      } else {
+        contenHTML = autos.map(function (carInfo, i) {
+          // alert(window.location.pathname);
+          var type = "/OccazAuto/public";
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_3__.default, {
+              src: "images/img-9.jpg",
+              keys: carInfo.id,
+              text: carInfo.marque,
+              label: carInfo.prix,
+              path: "".concat(type, "/").concat(carInfo.id)
+            })
+          });
+        });
+      } // alert(laoding);
+
+
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "cards",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
@@ -2527,17 +2509,7 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
             className: "cards__wrapper",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
               className: "cards__items",
-              children: autos.map(function (carInfo, i) {
-                // alert(i);
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_3__.default, {
-                    src: "images/img-9.jpg",
-                    text: carInfo.marque,
-                    label: carInfo.prix,
-                    path: "".concat(carInfo.km, "/").concat(carInfo.id)
-                  })
-                });
-              })
+              children: contenHTML
             })
           })
         })
@@ -3953,14 +3925,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Menubar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Menubar */ "./resources/js/components/Menubar.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/components/pages/Home.js");
 /* harmony import */ var _pages_Avendre__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Avendre */ "./resources/js/components/pages/Avendre.js");
 /* harmony import */ var _pages_product__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/product */ "./resources/js/components/pages/product.js");
 /* harmony import */ var _pages_SignUp__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/SignUp */ "./resources/js/components/pages/SignUp.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
 /* harmony import */ var _pages_Singlepage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/Singlepage */ "./resources/js/components/pages/Singlepage.js");
+/* harmony import */ var _pages_viewPage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/viewPage */ "./resources/js/components/pages/viewPage.js");
+
 
 
 
@@ -4019,23 +3993,23 @@ function Root() {
     className: "App page-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "content-wrap",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.BrowserRouter, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Menubar__WEBPACK_IMPORTED_MODULE_5__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.BrowserRouter, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Menubar__WEBPACK_IMPORTED_MODULE_5__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Switch, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/OccazAuto/public/",
             exact: true,
             component: _pages_Home__WEBPACK_IMPORTED_MODULE_6__.default
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/OccazAuto/public/A-vendre",
             component: _pages_Avendre__WEBPACK_IMPORTED_MODULE_7__.default
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/OccazAuto/public/vehicule-usager",
             component: _pages_product__WEBPACK_IMPORTED_MODULE_8__.default
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/OccazAuto/public/signUp",
             component: _pages_SignUp__WEBPACK_IMPORTED_MODULE_9__.default
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
-            path: "/OccazAuto/public/chrysler",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+            path: "/OccazAuto/public/:id",
             component: _pages_Singlepage__WEBPACK_IMPORTED_MODULE_11__.default
           })]
         })]
@@ -4418,6 +4392,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Detailproduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Detailproduct */ "./resources/js/components/Detailproduct.js");
+/* harmony import */ var _SinglePage_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../SinglePage.css */ "./resources/js/components/SinglePage.css");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
@@ -4446,23 +4421,81 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Singlepage = /*#__PURE__*/function (_Component) {
   _inherits(Singlepage, _Component);
 
   var _super = _createSuper(Singlepage);
 
-  function Singlepage() {
+  function Singlepage(props) {
+    var _this;
+
     _classCallCheck(this, Singlepage);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      auto: [],
+      laoding: true
+    };
+    return _this;
   }
 
   _createClass(Singlepage, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var auto_id = this.props.match.params.id; //  console.log(auto_id)
+
+      axios.get("http://localhost:8000/api/product/".concat(auto_id)).then(function (response) {
+        _this2.setState({
+          auto: response.data.auto,
+          laoding: false
+        });
+
+        console.log(response.data);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      var contenHTML = "";
+      var _this$state = this.state,
+          auto = _this$state.auto,
+          laoding = _this$state.laoding;
+
+      if (laoding) {
+        contenHTML = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
+          children: "Laoding ..."
+        });
+      } else {
+        contenHTML = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h6", {
+            children: auto.marque
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: auto.modele
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: auto.prix
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: auto.km
+          })]
+        }); // contenHTML=  auto.map((carInfo,i)=>{
+        //   alert(window.location.pathname);
+        // var type="/OccazAuto/public";
+        //   return (
+        //       <div>
+        //     <p>{carInfo.id}</p>
+        //       </div>
+        //     );
+        //  })
+      } // alert(laoding);
+
+
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "home-container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Detailproduct__WEBPACK_IMPORTED_MODULE_2__.default, {})
+          className: "singlePage-content",
+          children: contenHTML
         })
       });
     }
@@ -4506,6 +4539,82 @@ function Product() {
     })
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/viewPage.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/pages/viewPage.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var ViewPage = /*#__PURE__*/function (_Component) {
+  _inherits(ViewPage, _Component);
+
+  var _super = _createSuper(ViewPage);
+
+  function ViewPage() {
+    _classCallCheck(this, ViewPage);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(ViewPage, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+          className: "services",
+          children: "Vendre vos voiturhddddddddddddddddddddddddddes chez nous"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Example, {})]
+      });
+    }
+  }]);
+
+  return ViewPage;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ViewPage);
 
 /***/ }),
 
@@ -9207,7 +9316,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bar-fixed{\n  width: 100%;\n  position: fixed;\n  z-index: 999;\n}\n.navbar {\n  \n    background: linear-gradient(90deg, #18A857 0%, #18A857 100%);\n    height: 80px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.2rem;\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0;\n    width: 100%;\n    z-index: 999;\n  }\n  .menu-icon>div{\n    height: 30px;\n  \n  }\n \n  .navbar-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 80px;\n    max-width: 1500px;\n  }\n  a:link {\n    text-decoration: none;\n  }\n  .bf{\n    background-color: rgb(17, 14, 14);\n  }\n  .nav-links:hover{\n    color: #F2D100;\n  }\n  .masquer{\n    display: none;\n  }\n  .afficher{\n    display: block;\n  }\n  /* .close{\n    display: none;\n  }\n  .open{\n    display: block;\n  } */\n  \n  .navbar-logo {\n    color: #fff;\n    justify-self: start;\n    margin-left: 20px;\n    cursor: pointer;\n    text-decoration: none;\n    font-size: 2rem;\n    display: flex;\n    align-items: center;\n  }\n  \n  .fa-typo3 {\n    margin-left: 0.5rem;\n    font-size: 1.8rem;\n  }\n  \n  .nav-menu {\n    display: grid;\n    grid-template-columns: repeat(6, auto);\n    grid-gap: 10px;\n    list-style: none;\n    text-align: center;\n    width: 60vw;\n    justify-content: end;\n    margin-right: 2rem;\n  }\n  \n  .nav-item {\n    height: 50px;\n  }\n  \n  .nav-links {\n    color: #fff;\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    padding: 0.5rem 1rem;\n    height: 100%;\n  }\n  \n  .nav-links:hover {\n    border-bottom: 4px solid #fff;\n    transition: all 0.2s ease-out;\n  }\n  \n  .fa-bars {\n    color: rgb(255, 255, 255);\n  }\n  \n  .nav-links-mobile {\n    display: none;\n  }\n  \n  \n  .menu-icon {\n    display: none;\n  }\n  \n  @media screen and (max-width: 960px) {\n    .NavbarItems {\n      position: relative;\n    }\n  \n    .nav-menu {\n      display: flex;\n      flex-direction: column;\n      width: 100%;\n      height: 90vh;\n      position: absolute;\n      top: 80px;\n      left: -100%;\n      opacity: 1;\n      transition: all 0.5s ease;\n    }\n  \n    .nav-menu.active {\n      background: #242222;\n      left: 0;\n      opacity: 1;\n      transition: all 0.5s ease;\n      z-index: 1;\n    }\n  \n    .nav-links {\n      text-align: center;\n      padding: 2rem;\n      width: 100%;\n      display: table;\n    }\n  \n    .nav-links:hover {\n      background-color: #fff;\n      color: #242424;\n      border-radius: 0;\n    }\n  \n    .navbar-logo {\n      position: absolute;\n      background-color: rgb(58, 30, 30);\n      top: 0;\n      left: 0;\n      transform: translate(25%, 50%);\n    }\n  \n    .menu-icon {\n      display: block;\n      position: absolute;\n      top: 0;\n      right: 0;\n      transform: translate(-100%, 60%);\n      font-size: 1.8rem;\n      cursor: pointer;\n      background-color: rgb(24, 180, 94);\n    }\n  \n    .fa-times {\n      color: rgb(255, 255, 255);\n      font-size: 2rem;\n\n    }\n  \n    .nav-links-mobile {\n      display: block;\n      text-align: center;\n      margin: 2rem auto;\n      border-radius: 4px;\n      width: 80%;\n      text-decoration: none;\n      font-size: 1.5rem;\n      background-color: transparent;\n      color: #fff;\n      padding: 14px 20px;\n      border: 1px solid #fff;\n      transition: all 0.3s ease-out;\n    }\n  \n    .nav-links-mobile:hover {\n      background: #fff;\n      color: #242424;\n      transition: 250ms;\n    }\n  }\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bar-fixed{\n  width: 100%;\n  position: fixed;\n  z-index: 999;\n}\n.navbar {\n  \n    background: linear-gradient(90deg, #18A857 0%, #18A857 100%);\n    height: 80px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.2rem;\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0;\n    width: 100%;\n    z-index: 999;\n  }\n  .menu-icon>div{\n    height: 30px;\n  \n  }\n \n  .navbar-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 80px;\n    max-width: 1500px;\n  }\n  a:link {\n    text-decoration: none;\n  }\n  .bf{\n    background-color: rgb(17, 14, 14);\n  }\n  .nav-links:hover{\n    color: #F2D100;\n  }\n  .masquer{\n    display: none;\n  }\n  .afficher{\n    display: block;\n  }\n  /* .close{\n    display: none;\n  }\n  .open{\n    display: block;\n  } */\n  \n  .navbar-logo {\n    color: #fff;\n    justify-self: start;\n    margin-left: 20px;\n    cursor: pointer;\n    text-decoration: none;\n    font-size: 2rem;\n    display: flex;\n    align-items: center;\n  }\n  \n  .fa-typo3 {\n    margin-left: 0.5rem;\n    font-size: 1.8rem;\n  }\n  \n  .nav-menu {\n    display: grid;\n    grid-template-columns: repeat(6, auto);\n    grid-gap: 10px;\n    list-style: none;\n    text-align: center;\n    width: 60vw;\n    justify-content: end;\n    margin-right: 2rem;\n  }\n  \n  .nav-item {\n    height: 50px;\n  }\n  \n  .nav-links {\n    color: #fff;\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    padding: 0.5rem 1rem;\n    height: 100%;\n  }\n  \n  .nav-links:hover {\n    border-bottom: 4px solid #fff;\n    transition: all 0.2s ease-out;\n  }\n  \n  .fa-bars {\n    color: rgb(255, 255, 255);\n  }\n  \n  .nav-links-mobile {\n    display: none;\n  }\n  \n  \n  .menu-icon {\n    display: none;\n  }\n  \n  @media screen and (max-width: 960px) {\n    .NavbarItems {\n      position: relative;\n    }\n  \n    .nav-menu {\n      display: flex;\n      flex-direction: column;\n      width: 100%;\n      height: 90vh;\n      position: absolute;\n      top: 80px;\n      left: -100%;\n      opacity: 1;\n      transition: all 0.5s ease;\n      color: rgb(235, 0, 0);\n    }\n    /* .nav-menu *{\n      background-color: #fff;\n      padding-top: 20px;\n    } */\n  \n    .nav-menu.active {\n      background: #242222;\n      left: 0;\n      opacity: 1;\n      transition: all 0.5s ease;\n      z-index: 1;\n      /* padding: 0;\n      margin: 0; */\n    }\n  \n    .nav-links {\n      text-align: center;\n      padding: 2rem;\n      width: 100%;\n      display: table;\n    }\n  \n    .nav-links:hover {\n      background-color: #fff;\n      color: #242424;\n      border-radius: 0;\n    }\n  \n    .navbar-logo {\n      position: absolute;\n      background-color: rgb(58, 30, 30);\n      top: 0;\n      left: 0;\n      transform: translate(25%, 50%);\n    }\n  \n    .menu-icon {\n      display: block;\n      position: absolute;\n      top: 0;\n      right: 0;\n      transform: translate(-100%, 60%);\n      font-size: 1.8rem;\n      cursor: pointer;\n      background-color: rgb(24, 180, 94);\n    }\n  \n    .fa-times {\n      color: rgb(255, 255, 255);\n      font-size: 2rem;\n\n    }\n  \n    .nav-links-mobile {\n      display: block;\n      text-align: center;\n      margin: 2rem auto;\n      border-radius: 4px;\n      width: 100%;\n      text-decoration: none;\n      font-size: 1.5rem;\n      background-color: transparent;\n      color: #fff;\n      padding: 14px 20px;\n      border: 1px solid #fff;\n      transition: all 0.3s ease-out;\n    }\n  \n    .nav-links-mobile:hover {\n      background: #fff;\n      color: #242424;\n      transition: 250ms;\n    }\n  }\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9256,6 +9365,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".container-masque{\r\n    display: flex;\r\n    /* background-color: rgb(209, 245, 49); */\r\n    margin: 5px;\r\n}\r\n#masque-af{\r\n    flex-basis: 100%;\r\n    /* background-color: rgb(9, 17, 9); */\r\n  \r\n   \r\n\r\n}\r\n/* chevron fermer */\r\n.C:after {\r\n    content: \"\\f054\";\r\n    font-size: 20px;\r\n    cursor: pointer;\r\n\r\n    font-family: FontAwesome;\r\n}\r\n/* chevron ouvert */\r\n.O:after {\r\n    content: \"\\f078\";\r\n    font-size: 20px;\r\n    cursor: pointer;\r\n    font-family: FontAwesome;\r\n}\r\n.menubf{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: rgba(255, 255, 255, 0.733);\r\n    flex-basis: 100%;\r\n    cursor: pointer;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/SinglePage.css":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/SinglePage.css ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".singlePage-content{\r\n  padding-top: 100px;\r\n    background-color: rgb(243, 241, 241);\r\n    height: 400px;\r\n  }", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73903,6 +74036,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidenav_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/SinglePage.css":
+/*!************************************************!*\
+  !*** ./resources/js/components/SinglePage.css ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SinglePage_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SinglePage.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/SinglePage.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SinglePage_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SinglePage_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

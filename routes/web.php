@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('react');
 });
+Route::get('vehicule-usager/mazda',function () {
+    return view('welcome');
+});
 Route::get('/A-vendre', function () {
     return view('react');
 });
@@ -25,6 +28,6 @@ Route::get('/vehicule-usager', function () {
 Route::get('/plus', function () {
     return view('react');
 });
-Route::get('/chrysler', function () {
+Route::get('/{id}', function () {
     return view('react');
 });

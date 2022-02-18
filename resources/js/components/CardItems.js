@@ -6,7 +6,8 @@ import "./CardItem.css"
 qui recoit les props (infos) lorsque cet composant est utilisé
 */
 function CardItems(props) {
-    return (<div id="un-item">
+   // console.log(props);
+    return (<div id="un-item" key={props.keys}>
            <li className="cards__item container">
                <div className="cards__item__link" >
                  <div className="overlay-container">

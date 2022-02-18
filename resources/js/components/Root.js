@@ -10,7 +10,6 @@ import Menubar from './Menubar';
 import {BrowserRouter as Router,
     Switch,
     Route,
-
     } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -19,6 +18,7 @@ import Product from './pages/product';
 import SignUp from './pages/SignUp';
 import Footer from './Footer';
 import Singlepage from './pages/Singlepage';
+import ViewPage from './pages/viewPage';
 
 
 //import Example from './Example';
@@ -75,8 +75,9 @@ function Root() {
                       <Route path='/OccazAuto/public/A-vendre'  component={Avendre} />
                       <Route path='/OccazAuto/public/vehicule-usager'  component={Product} />
                       <Route path='/OccazAuto/public/signUp'  component={SignUp} />
-                      <Route path='/OccazAuto/public/chrysler'  component={Singlepage} />   
-                    </Switch>     
+                      <Route path='/OccazAuto/public/:id' component={Singlepage}/>   
+                    </Switch> 
+                   
              </Router>  
              </div>
              {/* /*  voir le footer dans lequery version mobile*/ }
