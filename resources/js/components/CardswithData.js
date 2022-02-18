@@ -4,7 +4,6 @@ import CardItems from './CardItems';
 import "./Cards.css";
 import Catalogue from './Catalogue';
 
-
 class CardswithData extends React.Component {
     constructor(props) {
       super(props);
@@ -14,6 +13,7 @@ class CardswithData extends React.Component {
       }
     }
      componentDidMount(){
+      
     axios.get('http://localhost:8000/api/list').then(response =>{
       this.setState({
         autos: response.data.autos,
@@ -21,7 +21,7 @@ class CardswithData extends React.Component {
       })
       console.log(response.data)
     })
-      // console.log(rest.data)
+   
       // if(rest.data.status === 200){
       // this.setState({
       //   autos:rest.data.autos,
@@ -30,6 +30,7 @@ class CardswithData extends React.Component {
      // this.state=rest.data.autos;
     //  console.log(this.state);
     }
+   
     render() {
       var contenHTML="";
       const { autos , laoding} = this.state;
@@ -40,7 +41,7 @@ class CardswithData extends React.Component {
       // alert(window.location.pathname);
     var type="/OccazAuto/public";
       return (
-          <div>
+          <div className='prod-container'>
                <CardItems
        src="images/img-9.jpg"
        keys={carInfo.id}
@@ -48,7 +49,6 @@ class CardswithData extends React.Component {
        label={carInfo.prix}
        path={`${type}/${carInfo.id}`}
           />
-
           </div>
         );
       })

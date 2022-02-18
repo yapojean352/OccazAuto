@@ -4,10 +4,13 @@
     margin:10px ;
     justify-content: center;
 }
+.container{
+    background-color: rgb(226, 41, 41);
+}
 .cards__item{
 
-    flex-basis: calc(30%-20px);
-    min-width: 300px;
+    flex-basis: calc(33.33%-20px);
+    /* min-width: 300px; */
 }
 
 /*  overlay  */

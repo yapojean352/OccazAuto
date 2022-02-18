@@ -9,6 +9,7 @@ import axios from 'axios';
 import Menubar from './Menubar';
 import {BrowserRouter as Router,
     Switch,
+    useParams,
     Route,
     } from "react-router-dom";
 
@@ -64,18 +65,20 @@ import ViewPage from './pages/viewPage';
 //Hacker News
 //Quiz
 function Root() {
+    //let {slug} = useParams();
     return (
           <div className="App page-container">
               <div className="content-wrap">
 
-            <Router>
+            <Router forceRefesh={true}>
+                
                 <Menubar/>
                     <Switch> 
                       <Route path='/OccazAuto/public/' exact component={Home} />
                       <Route path='/OccazAuto/public/A-vendre'  component={Avendre} />
-                      <Route path='/OccazAuto/public/vehicule-usager'  component={Product} />
+                      <Route path='/OccazAuto/public/vehicule-usager'   component={Product} />
                       <Route path='/OccazAuto/public/signUp'  component={SignUp} />
-                      <Route path='/OccazAuto/public/:id' component={Singlepage}/>   
+                      <Route path='/OccazAuto/public/:id'  component={Singlepage}/>   
                     </Switch> 
                    
              </Router>  

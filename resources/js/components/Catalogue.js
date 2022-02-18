@@ -43,7 +43,6 @@ function Catalogue() {
                 </div> 
                 
                 <div className="cadre-centre">
-                {/* <Cards/> */}
                 <CardswithData/>
                 
                 </div>

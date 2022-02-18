@@ -15,7 +15,7 @@ use App\Http\Controllers\Api\AutoController;
 */
 Route::post('/add-auto',[AutoController::class,'store']);
 Route::get('/list',[AutoController::class,'listProd']);
-Route::get('product/{id}',[AutoController::class,'getProd']);
+Route::get('/product/{id}',[AutoController::class,'getProd']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Detailproduct from '../Detailproduct';
+import SingleProduct from '../SingleProduct';
 import '../SinglePage.css';
 export default class Singlepage extends Component {
   constructor(props) {
@@ -27,10 +27,8 @@ export default class Singlepage extends Component {
  if(laoding){
   contenHTML = <h4>Laoding ...</h4>
  }else{
-  contenHTML = <div><h6>{auto.marque}</h6>
-   <p>{auto.modele}</p>
-   <p>{auto.prix}</p>
-   <p>{auto.km}</p>
+  contenHTML = <div>
+   <SingleProduct data={auto}/>
   </div>
   // contenHTML=  auto.map((carInfo,i)=>{
   //   alert(window.location.pathname);
