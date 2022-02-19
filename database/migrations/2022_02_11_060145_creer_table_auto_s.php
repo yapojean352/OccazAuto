@@ -19,6 +19,16 @@ class CreerTableAutoS extends Migration
             $table->string('modele');
             $table->string('prix');
             $table->string('km');
+            $table->string('carrosserie');
+            $table->string('couleur');
+            $table->string('immatriculation');
+            $table->string('carburant');
+            $table->string('transmission');
+            $table->string('details');
+            $table->string('annee');
+            $table->string('address_address')->nullable();
+            $table->double('address_latitude')->nullable();
+            $table->double('address_longitude')->nullable();
             $table->timestamps();
         });
     }
