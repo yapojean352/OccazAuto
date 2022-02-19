@@ -2488,7 +2488,6 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
           // alert(window.location.pathname);
           var type = "/OccazAuto/public";
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "prod-container",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_3__.default, {
               src: "images/img-9.jpg",
               keys: carInfo.id,
@@ -3940,7 +3939,6 @@ function Root() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "content-wrap",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.BrowserRouter, {
-        forceRefesh: true,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Menubar__WEBPACK_IMPORTED_MODULE_5__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Switch, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
             path: "/OccazAuto/public/",
@@ -4165,7 +4163,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ //import {useParams} from 'react-router-dom'
 
 /* composant items de chaque auto
 qui recoit les props (infos) lorsque cet composant est utilisé
@@ -4174,8 +4172,8 @@ qui recoit les props (infos) lorsque cet composant est utilisé
 function SingleProduct(props) {
   // let {id} = useParams();
   //console.log(id)
-  var ur = new URLSearchParams();
-  console.log(ur);
+  // const ur =new URLSearchParams();
+  // console.log(ur);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     id: "un-item",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
@@ -4555,6 +4553,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Catalogue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Catalogue */ "./resources/js/components/Catalogue.js");
+/* harmony import */ var _Product_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Product.css */ "./resources/js/components/Product.css");
+
 
 
 
@@ -4568,6 +4568,7 @@ __webpack_require__.r(__webpack_exports__);
 function Product() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "product-container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Catalogue__WEBPACK_IMPORTED_MODULE_2__.default, {})
     })
   });
@@ -9133,7 +9134,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#un-item{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin:10px ;\r\n    justify-content: center;\r\n}\r\n.container{\r\n    background-color: rgb(226, 41, 41);\r\n}\r\n.cards__item{\r\n\r\n    flex-basis: calc(33.33%-20px);\r\n    /* min-width: 300px; */\r\n}\r\n\r\n/*  overlay  */\r\n.overlay-container{\r\n    position: relative;\r\n    /* width: 400px;\r\n    height: 400px; */\r\n    display: inline-block;\r\n}\r\n.overlay{\r\n    position: absolute;\r\n    transition: all 0.3s ease-in-out;\r\n    opacity: 0;\r\n    background-color: rgb(22, 21, 21);\r\n}\r\n.overlay-container:hover .overlay{\r\nopacity: 1;\r\n}\r\n.text{\r\n    color: white;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform:  translate(-50% ,-50%) ;\r\n}\r\n.overlayFades{\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n   background-color: #3db571c2; \r\n\r\n}\r\n.overlay-container:hover .overlayFades{\r\n    width: 100%;\r\n    /* background-color: rgba(26, 170, 12, 0.404);  */\r\n}\r\n@media  only screen and (min-width:768px) and (max-width: 1024px) {\r\n    .cards__item{\r\n\r\n        flex-basis: calc(50%-20px);\r\n        min-width: 300px;\r\n    }\r\n\r\n}\r\n@media screen and (max-width:768px) {\r\n    .cards__item{\r\n        align-self: center;\r\n        flex-basis: calc(100%-20px);\r\n        min-width: 200px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#un-item{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin:10px ;\r\n    justify-content: center;\r\n}\r\n.container{\r\n    background-color: rgb(226, 41, 41);\r\n\r\n}\r\n.cards__item{\r\n    /* flex-basis: calc(33.33%-20px); */\r\n   width: 100%;\r\n}\r\n\r\n/*  overlay  */\r\n.overlay-container{\r\n    position: relative;\r\n    /* width: 400px;\r\n    height: 400px; */\r\n    display: inline-block;\r\n}\r\n.overlay{\r\n    position: absolute;\r\n    transition: all 0.3s ease-in-out;\r\n    opacity: 0;\r\n    background-color: rgb(22, 21, 21);\r\n}\r\n.overlay-container:hover .overlay{\r\nopacity: 1;\r\n}\r\n.text{\r\n    color: white;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform:  translate(-50% ,-50%) ;\r\n}\r\n.overlayFades{\r\n    height: 100%;\r\n    width: 100%;\r\n    top: 0;\r\n    left: 0;\r\n   background-color: #3db571c2; \r\n\r\n}\r\n.overlay-container:hover .overlayFades{\r\n    width: 100%;\r\n    /* background-color: rgba(26, 170, 12, 0.404);  */\r\n}\r\n@media  only screen and (min-width:768px) and (max-width: 1024px) {\r\n    .cards__item{\r\n        flex-basis: calc(50%-20px);\r\n        min-width: 300px;\r\n    }\r\n\r\n}\r\n /*=====Media query mobile responsive    ============*/\r\n @media only screen and (max-width: 748px) {\r\n    .cards__item{\r\n        align-self: center;\r\n        flex-basis: calc(100% - 20px);\r\n    }\r\n  }\r\n@media screen and (max-width:768px) {\r\n    .cards__item{\r\n        align-self: center;\r\n        flex-basis: calc(100% - 20px);\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9157,7 +9158,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cards {\r\n  display: flex;\r\n  align-content: center;\r\n  width: 100%;\r\n    }\r\n  \r\n  h1 {\r\n    text-align: center;\r\n  }\r\n  \r\n  .cards__container {\r\n    display: flex;\r\n    flex-flow: column;\r\n    align-items: center;\r\n    /* max-width: 1120px; */\r\n    width: 100%; \r\n    height: 100%;\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  .cards__wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(167, 201, 18); */\r\n  \r\n  }\r\n  \r\n  .cards__items {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n   width: 100%;\r\n   justify-content: center;\r\n    /* margin-bottom: 24px; */\r\n  }\r\n  \r\n  .cards__item {\r\n    display: flex;\r\n    flex: 1;\r\n  }\r\n  \r\n  .cards__item__link {\r\n    display: flex;\r\n    flex-flow: column;\r\n    width: 100%;\r\n    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);\r\n    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));\r\n    border-radius: 10px;\r\n    overflow: hidden;\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .cards__item__pic-wrap {\r\n    position: relative;\r\n    width: 100%;\r\n    padding-top: 67%;\r\n    overflow: hidden;\r\n  }\r\n  .cards__item__img{\r\n    position: relative;\r\n  }\r\n  \r\n  .fade-img {\r\n    -webkit-animation-name: fade-img;\r\n            animation-name: fade-img;\r\n    -webkit-animation-duration: 2s;\r\n            animation-duration: 2s;\r\n  }\r\n/* ajout du card aventure dans limage   */\r\n  .cards__item__pic-wrap::after {\r\n    content: attr(data-category);\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin-left: 10px;\r\n    padding: 6px 8px;\r\n    min-width: calc((100%) - 60px);\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #fff;\r\n    background-color: #a71b1b;\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  \r\n  .cards__item__img {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    display: block;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: 100%;\r\n    max-height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    transition: all 0.2s linear;\r\n  }\r\n  .cards{\r\n    height: auto;\r\n  }\r\n  .cards__item :hover{\r\n    /* background-color: rgba(116, 230, 10, 0.788); */\r\n  }\r\n  \r\n  .cards__item__img::after{\r\n     content: attr(data-category);\r\n     position: absolute;\r\n    bottom: 0;\r\n    margin-left: 10px;\r\n    padding: 6px 8px;\r\n    max-width: calc((100%));\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #fff;\r\n    background-color: #1f98f4;\r\n    box-sizing: border-box;\r\n  }\r\n \r\n  .cards__item__img:hover {\r\n    /* transform: scale(2.1); */\r\n    background-color: turquoise;\r\n  }\r\n     .cards__item__img::after{\r\n    content: attr(data-survol);\r\n    position: absolute;\r\n    top: 0;\r\n   \r\n     }  \r\n     /* .container{\r\n      position: relative;\r\n  } */\r\n  /* .overlay{\r\n      position: absolute;\r\n      background-color: rgb(70, 12, 12);\r\n  } */\r\n  .overlay:hover .overleyFade{\r\n    width: 100%;\r\n  }\r\n     .overleyFade{\r\n       width:0%;\r\n       height: 100%;\r\n       background-color: rgb(32, 17, 17);\r\n       opacity: 0.5;\r\n     }\r\n  .cards__item__pic-wrap:hover{\r\n    \r\n\r\n}\r\n  .cards__items {\r\n    display: flex;\r\n   align-content: center;\r\n    height: auto;\r\n    \r\n  }\r\n  \r\n  .cards__item__info {\r\n    padding: 20px 30px 30px;\r\n  }\r\n  \r\n  .cards__item__text {\r\n    color: #252e48;\r\n    font-size: 18px;\r\n    line-height: 24px;\r\n  }\r\n  \r\n  @media only screen and (min-width: 1200px) {\r\n    .content__blog__container {\r\n      width: 100%;\r\n    }\r\n  }\r\n  \r\n  @media only screen and (min-width: 1024px) {\r\n    .cards__items {\r\n      display: flex;\r\n    }\r\n  }\r\n  \r\n  @media only screen and (max-width: 1024px) {\r\n    .cards__item {\r\n      margin-bottom: 2rem;\r\n    }\r\n  }\r\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cards {\r\n  display: flex;\r\n  align-content: center;\r\n  width: 100%;\r\n    }\r\n    /* .prod-container{\r\n      background-color: rgb(156, 221, 34) !important;\r\n      width: 100%;\r\n    } */\r\n  \r\n  h1 {\r\n    text-align: center;\r\n  }\r\n  \r\n  .cards__container {\r\n    display: flex;\r\n    flex-flow: column;\r\n    align-items: center;\r\n    /* max-width: 1120px; */\r\n    width: 100%; \r\n    height: 100%;\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  .cards__wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(167, 201, 18); */\r\n  \r\n  }\r\n  /* auto grid */\r\n  .cards__items>* {\r\nflex-basis: calc(33.33% - 10px);\r\n  }\r\n  .cards__items {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n   width: 100%;\r\n   justify-content: center;\r\n    /* margin-bottom: 24px; */\r\n    background-color: rgb(156, 221, 34) !important;\r\n  }\r\n  \r\n  .cards__item {\r\n    display: flex;\r\n    flex: 1;\r\n  }\r\n  \r\n  .cards__item__link {\r\n    display: flex;\r\n    flex-flow: column;\r\n    width: 100%;\r\n    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);\r\n    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));\r\n    border-radius: 10px;\r\n    overflow: hidden;\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .cards__item__pic-wrap {\r\n    position: relative;\r\n    width: 100%;\r\n    padding-top: 67%;\r\n    overflow: hidden;\r\n  }\r\n  .cards__item__img{\r\n    position: relative;\r\n  }\r\n  \r\n  .fade-img {\r\n    -webkit-animation-name: fade-img;\r\n            animation-name: fade-img;\r\n    -webkit-animation-duration: 2s;\r\n            animation-duration: 2s;\r\n  }\r\n/* ajout du card aventure dans limage   */\r\n  .cards__item__pic-wrap::after {\r\n    content: attr(data-category);\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin-left: 10px;\r\n    padding: 6px 8px;\r\n    min-width: calc((100%) - 60px);\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #fff;\r\n    background-color: #a71b1b;\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  \r\n  .cards__item__img {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    display: block;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: 100%;\r\n    max-height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    transition: all 0.2s linear;\r\n  }\r\n  .cards{\r\n    height: auto;\r\n  }\r\n  .cards__item :hover{\r\n    /* background-color: rgba(116, 230, 10, 0.788); */\r\n  }\r\n  \r\n  .cards__item__img::after{\r\n     content: attr(data-category);\r\n     position: absolute;\r\n    bottom: 0;\r\n    margin-left: 10px;\r\n    padding: 6px 8px;\r\n    max-width: calc((100%));\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #fff;\r\n    background-color: #1f98f4;\r\n    box-sizing: border-box;\r\n  }\r\n \r\n  .cards__item__img:hover {\r\n    /* transform: scale(2.1); */\r\n    background-color: turquoise;\r\n  }\r\n     .cards__item__img::after{\r\n    content: attr(data-survol);\r\n    position: absolute;\r\n    top: 0;\r\n   \r\n     }  \r\n     /* .container{\r\n      position: relative;\r\n  } */\r\n  /* .overlay{\r\n      position: absolute;\r\n      background-color: rgb(70, 12, 12);\r\n  } */\r\n  .overlay:hover .overleyFade{\r\n    width: 100%;\r\n  }\r\n     .overleyFade{\r\n       width:0%;\r\n       height: 100%;\r\n       background-color: rgb(32, 17, 17);\r\n       opacity: 0.5;\r\n     }\r\n  .cards__item__pic-wrap:hover{\r\n    \r\n\r\n}\r\n  .cards__items {\r\n    display: flex;\r\n   align-content: center;\r\n    height: auto;\r\n    \r\n  }\r\n  \r\n  .cards__item__info {\r\n    padding: 20px 30px 30px;\r\n  }\r\n  \r\n  .cards__item__text {\r\n    color: #252e48;\r\n    font-size: 18px;\r\n    line-height: 24px;\r\n  }\r\n  \r\n  @media only screen and (min-width: 1200px) {\r\n    .content__blog__container {\r\n      width: 100%;\r\n    }\r\n  }\r\n  \r\n  @media only screen and (min-width: 1024px) {\r\n    .cards__items {\r\n      display: flex;\r\n    }\r\n  }\r\n  \r\n  @media only screen and (max-width: 1024px) {\r\n    .cards__item {\r\n      margin-bottom: 2rem;\r\n    }\r\n    \r\n  }\r\n   /*=====Media query mobile responsive    ============*/\r\n  @media only screen and (max-width: 748px) {\r\n    .cards__items>* {\r\n      flex-basis: calc(100% - 10px);\r\n       min-width: 100%; \r\n      background-color: #fff;\r\n        }\r\n        .cards__items {\r\n          flex-direction: column;\r\n         width: 100%;\r\n         justify-content: center;\r\n          /* margin-bottom: 24px; */\r\n          background-color: rgb(47, 34, 221) !important;\r\n        }\r\n    \r\n  }\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9181,7 +9182,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-display{\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    min-height: 600px;\r\n    width: 100%;\r\n    flex-basis: 100%;\r\n  \r\n}\r\n/* .cadre-centre{ */\r\n    /* display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    background-color: #fff; */\r\n/* } */\r\n.row{\r\n    display: flex;\r\n     /* background-color: rgb(97, 75, 75); */\r\n    margin: 5px;\r\n    flex-basis: 100%;\r\n    height: auto;\r\n}\r\n.page-title{\r\n    display: flex;\r\n    width: 100%;\r\n   \r\n  }\r\n  /* scrollbar */\r\n  .filters-colunns::-webkit-scrollbar{\r\n      width: 7px;\r\n      background-color: #ecebeb;\r\n  }\r\n  ::-webkit-scrollbar-thumb{\r\n      background-color: #eb1f1f;\r\n      height: 100px;\r\n  }\r\n  .page-title-panel{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: #fff;\r\n     width: 100%;\r\n    height: 30px;\r\n    margin: 10px;\r\n  }\r\n.filters-colunns{\r\n   max-height: 500px;\r\n    /* background-color: rgb(255, 16, 16); */\r\n    flex-basis: calc(25% - 5px);\r\n\tmargin-left: 10px;\r\n\tmin-width: 15rem;\r\n    overflow-y: scroll;\r\n    background-color: rgb(160, 160, 167);\r\n\r\n}\r\n.fa-sliders{\r\n    font-size:3rem;\r\n    color: green;\r\n    /* background-color: rgb(7, 116, 21); */\r\n}\r\n.listing-column{\r\n    /* min-width:75%; */\r\n    height: auto;\r\n    /* background-color: rgba(72, 0, 240, 0.938); */\r\n    flex-basis: calc(75% - 5px);\r\n   \r\n}\r\n.filter-produit{\r\n    background-color: rgb(255, 254, 254);\r\n}\r\n\r\n/*** ecran moyen**/\r\n@media  only screen and (min-width:768px) and (max-width: 1024px) {\r\n   \r\n    .listing-column{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(62, 199, 20, 0.938);\r\n        flex-basis: calc(100% - 5px);\r\n       \r\n    }\r\n     .filters-colunns{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(216, 136, 30, 0.938);\r\n        flex-basis: calc(100% - 5px);\r\n       \r\n    }\r\n    \r\n}\r\n/*** ecran petit p************************************/\r\n@media screen and (max-width:768px) {\r\n    .listing-column{\r\n        /* min-width:75%; */\r\n        background-color: rgba(24, 27, 23, 0.938);\r\n        flex-basis: calc(100% - 1px);\r\n       \r\n    }\r\n     .filters-colunns{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(16, 17, 112, 0.938);\r\n        flex-basis: calc(100% - 1px);\r\n       \r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".catalogue-display{\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    min-height: 600px;\r\n    width: 100%;\r\n    flex-basis: 100%;\r\n    /* margin: 100px; */\r\n    /* background-color: rgb(10, 1, 1); */\r\n  \r\n}\r\n/* .cadre-centre{ */\r\n    /* display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    background-color: #fff; */\r\n/* } */\r\n.row{\r\n    display: flex;\r\n     /* background-color: rgb(97, 75, 75); */\r\n    margin: 5px;\r\n    flex-basis: 100%;\r\n    height: auto;\r\n}\r\n.page-title{\r\n    display: flex;\r\n    width: 100%;\r\n   \r\n  }\r\n  /* scrollbar */\r\n  .filters-colunns::-webkit-scrollbar{\r\n      width: 7px;\r\n      background-color: #ecebeb;\r\n  }\r\n  ::-webkit-scrollbar-thumb{\r\n      background-color: #eb1f1f;\r\n      height: 100px;\r\n  }\r\n  .page-title-panel{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    background-color: #fff;\r\n     width: 100%;\r\n    height: 30px;\r\n    margin: 10px;\r\n  }\r\n.filters-colunns{\r\n   max-height: 500px;\r\n    /* background-color: rgb(255, 16, 16); */\r\n    flex-basis: calc(25% - 5px);\r\n\tmargin-left: 10px;\r\n\tmin-width: 15rem;\r\n    overflow-y: scroll;\r\n    background-color: rgb(160, 160, 167);\r\n\r\n}\r\n.fa-sliders{\r\n    font-size:3rem;\r\n    color: green;\r\n    /* background-color: rgb(7, 116, 21); */\r\n}\r\n.listing-column{\r\n    /* min-width:75%; */\r\n    height: auto;\r\n    /* background-color: rgba(72, 0, 240, 0.938); */\r\n    flex-basis: calc(75% - 5px);\r\n   \r\n}\r\n.filter-produit{\r\n    background-color: rgb(255, 254, 254);\r\n}\r\n\r\n/*** ecran moyen**/\r\n@media  only screen and (min-width:768px) and (max-width: 1024px) {\r\n   \r\n    .listing-column{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(62, 199, 20, 0.938);\r\n        flex-basis: calc(100% - 5px);\r\n       \r\n    }\r\n     .filters-colunns{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(216, 136, 30, 0.938);\r\n        flex-basis: calc(100% - 5px);\r\n       \r\n    }\r\n    \r\n}\r\n/*** ecran petit p************************************/\r\n@media screen and (max-width:768px) {\r\n    .listing-column{\r\n        /* min-width:75%; */\r\n        background-color: rgba(24, 27, 23, 0.938);\r\n        flex-basis: calc(100% - 1px);\r\n       \r\n    }\r\n     .filters-colunns{\r\n        /* min-width:75%; */\r\n        height: auto;\r\n        background-color: rgba(16, 17, 112, 0.938);\r\n        flex-basis: calc(100% - 1px);\r\n       \r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9325,7 +9326,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".filter-marque{\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: #fff;\r\n}\r\nul li{\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n*{\r\n  margin: 0px;\r\n  padding: 0ex;  \r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".filter-marque{\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: #fff;\r\n    min-width: 100%;\r\n}\r\nul li{\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n*{\r\n  margin: 0px;\r\n  padding: 0ex;  \r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9374,6 +9375,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".partenaire{\r\n    min-height: 200px; \r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);\r\n    background: linear-gradient(90deg, #6218a8 0%, #e05cd5 100%);\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Product.css":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Product.css ***!
+  \*******************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".product-container{\r\n    padding-top: 100px;\r\n    background-color: rgb(22, 228, 217);\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -74063,6 +74088,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Partenaires_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/Product.css":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Product.css ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Product_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Product.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/Product.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Product_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Product_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

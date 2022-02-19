@@ -69,9 +69,7 @@ function Root() {
     return (
           <div className="App page-container">
               <div className="content-wrap">
-
-            <Router forceRefesh={true}>
-                
+            <Router>
                 <Menubar/>
                     <Switch> 
                       <Route path='/OccazAuto/public/' exact component={Home} />
@@ -80,7 +78,6 @@ function Root() {
                       <Route path='/OccazAuto/public/signUp'  component={SignUp} />
                       <Route path='/OccazAuto/public/:id'  component={Singlepage}/>   
                     </Switch> 
-                   
              </Router>  
              </div>
              {/* /*  voir le footer dans lequery version mobile*/ }

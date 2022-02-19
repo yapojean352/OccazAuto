@@ -2,15 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Boutton } from './Boutton'
 import "./SingleProduct.css";
-import {useParams} from 'react-router-dom'
+//import {useParams} from 'react-router-dom'
 /* composant items de chaque auto
 qui recoit les props (infos) lorsque cet composant est utilisé
 */
 function SingleProduct(props) {
    // let {id} = useParams();
  //console.log(id)
-  const ur =new URLSearchParams();
-  console.log(ur);
+ // const ur =new URLSearchParams();
+ // console.log(ur);
     return (<div id="un-item">
            <li className="cards__item container">
                <div className="cards__item__link" >

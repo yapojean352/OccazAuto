@@ -6,11 +6,11 @@
 }
 .container{
     background-color: rgb(226, 41, 41);
+
 }
 .cards__item{
-
-    flex-basis: calc(33.33%-20px);
-    /* min-width: 300px; */
+    /* flex-basis: calc(33.33%-20px); */
+   width: 100%;
 }
 
 /*  overlay  */
@@ -50,16 +50,21 @@ opacity: 1;
 }
 @media  only screen and (min-width:768px) and (max-width: 1024px) {
     .cards__item{
-
         flex-basis: calc(50%-20px);
         min-width: 300px;
     }
 
 }
+ /*=====Media query mobile responsive    ============*/
+ @media only screen and (max-width: 748px) {
+    .cards__item{
+        align-self: center;
+        flex-basis: calc(100% - 20px);
+    }
+  }
 @media screen and (max-width:768px) {
     .cards__item{
         align-self: center;
-        flex-basis: calc(100%-20px);
-        min-width: 200px;
+        flex-basis: calc(100% - 20px);
     }
 }

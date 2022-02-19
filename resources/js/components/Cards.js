@@ -13,7 +13,7 @@ function Cards() {
                         label="Cliquer Ici"
                         path="/OccazAuto/public/detail-produit-1"
                         /> */}
-                         <CardItems
+                         {/* <CardItems
                         src="images/img-9.jpg"
                         text='explore water hidden'
                         label="Cliquer Ici"
@@ -72,7 +72,7 @@ function Cards() {
                         src="images/img-6.jpg"
                         text='mon image 6 a afficher'
                         label="Nature "
-                        path="/OccazAuto/public/detail-produit-4"/>
+                        path="/OccazAuto/public/detail-produit-4"/> */}
                     </ul>
 
                 </div>

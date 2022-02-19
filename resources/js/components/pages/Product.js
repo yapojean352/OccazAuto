@@ -1,5 +1,6 @@
 import React from 'react'
 import Catalogue from '../Catalogue'
+import '../Product.css';
 /*   =====
  - page des produits en catalogue
  -les voitures sont  relies a leur detail respectif 
@@ -7,7 +8,7 @@ import Catalogue from '../Catalogue'
 =====*/
 export default function Product() {
     return (<>
-          <div>
+          <div className='product-container'>
           <Catalogue/>
           </div>
           </> 

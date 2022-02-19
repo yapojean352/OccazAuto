@@ -13,7 +13,6 @@ class CardswithData extends React.Component {
       }
     }
      componentDidMount(){
-      
     axios.get('http://localhost:8000/api/list').then(response =>{
       this.setState({
         autos: response.data.autos,
@@ -41,7 +40,7 @@ class CardswithData extends React.Component {
       // alert(window.location.pathname);
     var type="/OccazAuto/public";
       return (
-          <div className='prod-container'>
+          <div>
                <CardItems
        src="images/img-9.jpg"
        keys={carInfo.id}
