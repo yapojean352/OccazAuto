@@ -18,7 +18,7 @@ class CardswithData extends React.Component {
         autos: response.data.autos,
         laoding:false,
       })
-      console.log(response.data)
+      console.log(response.data);
     })
    
       // if(rest.data.status === 200){
@@ -32,17 +32,21 @@ class CardswithData extends React.Component {
    
     render() {
       var contenHTML="";
+      var   imgd="";
       const { autos , laoding} = this.state;
    if(laoding){
     contenHTML = <h4>Laoding ...</h4>
    }else{
     contenHTML=  autos.map((carInfo,i)=>{
-       //alert(carInfo.pictures);
+      carInfo.pictures.map((v ,s)=>{
+        imgd = v.imageUrl;
+      }
+      );
     var type="/OccazAuto/public";
       return (
           <div>
                <CardItems
-       src="images/1.jpg"
+       src={`images/${imgd}`}
        keys={carInfo.id}
        text={carInfo.marque}
        label={carInfo.prix}

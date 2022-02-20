@@ -6,29 +6,31 @@ export default class Singlepage extends Component {
     super(props);
     this.state = {
     auto:[],
+    images:[],
     laoding:true,
     }
   }
    componentDidMount(){
        const auto_id = this.props.match.params.id;
-//  console.log(auto_id)
+ //console.log(this.props);
   axios.get(`http://localhost:8000/api/product/${auto_id}`).then(response =>{
     this.setState({
       auto: response.data.auto,
+      images: response.data.images,
       laoding:false,
     })
-    console.log(response.data)
+   console.log(response.data)
  })
 
   }
   render() {
     var contenHTML="";
-    const { auto , laoding} = this.state;
+    const { auto  ,images, laoding} = this.state;
  if(laoding){
   contenHTML = <h4>Laoding ...</h4>
  }else{
   contenHTML = <div>
-   <SingleProduct data={auto}/>
+   <SingleProduct data={auto} dataImg={images} />
   </div>
   // contenHTML=  auto.map((carInfo,i)=>{
   //   alert(window.location.pathname);

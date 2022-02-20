@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Rules\imageValidateUpdate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class AutoController extends Controller
 {
@@ -76,6 +77,11 @@ class AutoController extends Controller
             $fileName = $file->getClientOriginalName() ;
             $destinationPath = public_path().'/images' ;
             $file->move($destinationPath,$fileName);
+        }else {
+            # code...
+            $fileName='img-9.jpg';
+        };
+      
                // $filename = $request->image->store('uploads', 'public');
                // $filename = $request->image->store('uploads', 'public');
         Picture::create([
@@ -84,7 +90,7 @@ class AutoController extends Controller
         ]);
                
            // }
-        };
+       
         
         // $auto = new Auto;
         // $auto->marque=$request->input('marque');
@@ -98,18 +104,31 @@ class AutoController extends Controller
         ]);
     }
     public function listProd(){
-      $autos = Auto::all();
+       // $tabautos=[];
+    //  $autos = DB::table('autos')
+    //  ->rightJoin('pictures', 'pictures.auto_id', '=', 'autos.id')->get();
+    //  ->where('pictures.auto_id', '=', 3)
+    $autos = Auto::with('pictures')->get();
+     // $autos = Auto::all();
+    //   $img = Picture::where('auto_id', 2)->get()->id;
+//return $result;
       return response()->json(['status'=>200,
-           'autos'=> $autos
-           
+           'autos'=> $autos           
         ]);
     }
+
+
     public function getProd($id){
-       
+       // $onevelo = velo::all()->where("id",$id->id);
+       //Auto::all()->where("id",$id->id);
         $auto= Auto::find($id);
+       // $picture = Picture::where('auto_id', $id);
+        $picture = Picture::where('auto_id', '=', $id)->first();
+        //return $picture;
         return response()->json(['status'=>200,
-        'auto'=> $auto]);
+        'auto'=> $auto,
+        'images'=> $picture,
+        ]);
   
-      }
-    
+      } 
 }

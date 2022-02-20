@@ -2475,6 +2475,7 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var contenHTML = "";
+      var imgd = "";
       var _this$state = this.state,
           autos = _this$state.autos,
           laoding = _this$state.laoding;
@@ -2485,11 +2486,13 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         contenHTML = autos.map(function (carInfo, i) {
-          //alert(carInfo.pictures);
+          carInfo.pictures.map(function (v, s) {
+            imgd = v.imageUrl;
+          });
           var type = "/OccazAuto/public";
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_3__.default, {
-              src: "images/36343-produits-laitiers-ne-contribuent-pas-obesite-infantile.png",
+              src: "images/".concat(imgd),
               keys: carInfo.id,
               text: carInfo.marque,
               label: carInfo.prix,
@@ -4173,7 +4176,7 @@ function SingleProduct(props) {
   // let {id} = useParams();
   //console.log(id)
   // const ur =new URLSearchParams();
-  // console.log(ur);
+  //console.log(props.dataImg);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     id: "un-item",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
@@ -4181,7 +4184,10 @@ function SingleProduct(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "cards__item__link",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          className: "img-container"
+          className: "img-container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+            src: "images/".concat(props.dataImg.imageUrl)
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           className: "overlay-container",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
@@ -4190,6 +4196,10 @@ function SingleProduct(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "singleProduct_info",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+              children: "IMG"
+            }), props.dataImg.imageUrl]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
               children: "Modele"
             }), props.data.modele]
@@ -4472,6 +4482,7 @@ var Singlepage = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
     _this.state = {
       auto: [],
+      images: [],
       laoding: true
     };
     return _this;
@@ -4482,11 +4493,12 @@ var Singlepage = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var auto_id = this.props.match.params.id; //  console.log(auto_id)
+      var auto_id = this.props.match.params.id; //console.log(this.props);
 
       axios.get("http://localhost:8000/api/product/".concat(auto_id)).then(function (response) {
         _this2.setState({
           auto: response.data.auto,
+          images: response.data.images,
           laoding: false
         });
 
@@ -4499,6 +4511,7 @@ var Singlepage = /*#__PURE__*/function (_Component) {
       var contenHTML = "";
       var _this$state = this.state,
           auto = _this$state.auto,
+          images = _this$state.images,
           laoding = _this$state.laoding;
 
       if (laoding) {
@@ -4508,7 +4521,8 @@ var Singlepage = /*#__PURE__*/function (_Component) {
       } else {
         contenHTML = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_SingleProduct__WEBPACK_IMPORTED_MODULE_2__.default, {
-            data: auto
+            data: auto,
+            dataImg: images
           })
         }); // contenHTML=  auto.map((carInfo,i)=>{
         //   alert(window.location.pathname);

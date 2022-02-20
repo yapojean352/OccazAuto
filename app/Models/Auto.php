@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Auto;
+use App\Models\Picture;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
