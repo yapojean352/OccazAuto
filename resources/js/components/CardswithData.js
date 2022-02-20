@@ -37,12 +37,12 @@ class CardswithData extends React.Component {
     contenHTML = <h4>Laoding ...</h4>
    }else{
     contenHTML=  autos.map((carInfo,i)=>{
-      // alert(window.location.pathname);
+       //alert(carInfo.pictures);
     var type="/OccazAuto/public";
       return (
           <div>
                <CardItems
-       src="images/img-9.jpg"
+       src="images/1.jpg"
        keys={carInfo.id}
        text={carInfo.marque}
        label={carInfo.prix}

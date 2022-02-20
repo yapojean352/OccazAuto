@@ -18,7 +18,7 @@ class Auto extends Model
     // ];
     public function pictures(){
         //return $this->hasMany('App\odels\photo');
-        return $this->hasMany(Photo::class);
+        return $this->hasMany(Picture::class);
         
     }
 }

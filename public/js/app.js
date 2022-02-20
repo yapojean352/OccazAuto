@@ -2485,11 +2485,11 @@ var CardswithData = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         contenHTML = autos.map(function (carInfo, i) {
-          // alert(window.location.pathname);
+          //alert(carInfo.pictures);
           var type = "/OccazAuto/public";
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_3__.default, {
-              src: "images/img-9.jpg",
+              src: "images/36343-produits-laitiers-ne-contribuent-pas-obesite-infantile.png",
               keys: carInfo.id,
               text: carInfo.marque,
               label: carInfo.prix,

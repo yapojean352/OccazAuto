@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Auto;
+use App\Models\Picture;   
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rules\imageValidateUpdate;
@@ -60,17 +61,31 @@ class AutoController extends Controller
         // $us = Auth::user()->id;
         // $uservelos = Velo::where("users_id", $us)->paginate(100);
         // foreach ($uservelos as $ts) {
-        //  dd(count(($ts)->photos));
+        //dd($request->image);
+    //     if($file = $request->hasFile('image')) {
+             
+    //         $file = $request->file('image') ;
+    //         $fileName = $file->getClientOriginalName() ;
+    //         $destinationPath = public_path().'/images' ;
+    //         $file->move($destinationPath,$fileName);
+    //       //  return redirect('/uploadfile');
+    // }
         if ($request->image) {
-            foreach ($request->image as $photo) {
-                $filename = $photo->store('uploads', 'public');
-                //dd($photo);
-                Picture::create([
-                    'auto_id' => $v->id,
-                    'imageUrl' => $filename,
-                ]);
-            }
+          //  foreach ($request->image as $photo) {
+            $file = $request->file('image') ;
+            $fileName = $file->getClientOriginalName() ;
+            $destinationPath = public_path().'/images' ;
+            $file->move($destinationPath,$fileName);
+               // $filename = $request->image->store('uploads', 'public');
+               // $filename = $request->image->store('uploads', 'public');
+        Picture::create([
+            'auto_id' => $v->id,
+            'imageUrl' => $fileName,
+        ]);
+               
+           // }
         };
+        
         // $auto = new Auto;
         // $auto->marque=$request->input('marque');
         // $auto->modele=$request->input('modele');
