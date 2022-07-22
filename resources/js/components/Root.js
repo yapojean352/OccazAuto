@@ -9,7 +9,6 @@ import axios from 'axios';
 import Menubar from './Menubar';
 import {BrowserRouter as Router,
     Switch,
-    useParams,
     Route,
     } from "react-router-dom";
 
@@ -74,11 +73,13 @@ function Root() {
                     <Switch> 
                       <Route path='/OccazAuto/public/' exact component={Home} />
                       <Route path='/OccazAuto/public/A-vendre'  component={Avendre} />
-                      <Route path='/OccazAuto/public/vehicule-usager'   component={Product} />
-                      <Route path='/OccazAuto/public/signUp'  component={SignUp} />
-                      <Route path='/OccazAuto/public/:id'  component={Singlepage}/>   
+                       <Route path='/OccazAuto/public/vehicule-usager'   component={Product} />
+                       {/* <Route path='/OccazAuto/public/:seach'  component={Product} /> */}
+                      {/*<Route path='/OccazAuto/public/signUp'  component={SignUp} />
+                      <Route path='/OccazAuto/public/financement'  component={financement} />*/}
+                      <Route  path='/OccazAuto/public/:id'   component={Singlepage}/>    
                     </Switch> 
-             </Router>  
+             </Router> 
              </div>
              {/* /*  voir le footer dans lequery version mobile*/ }
             <Footer/>

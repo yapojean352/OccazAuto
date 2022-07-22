@@ -28,8 +28,7 @@ function SidenavModel(){
                         <div className="container-masque">
                     {/* <TypeCarroFilter/> */}
                        {/* <FiltreTest/> */}
-                       {/* <Lipucefilter/> */}  
-                    <Lipucefilterdata/>
+                    <Lipucefilterdata/>  
                     </div>
                     </div>
                   

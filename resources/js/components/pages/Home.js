@@ -7,7 +7,7 @@ function Home() {
     return (<div className="home-container">
       <HeroSection/> 
       <Partenaires/>
-   
+    
         </div> )
 }
 

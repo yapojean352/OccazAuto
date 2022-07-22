@@ -8,9 +8,8 @@ qui recoit les props (infos) lorsque cet composant est utilisé
 */
 function SingleProduct(props) {
    // let {id} = useParams();
- //console.log(id)
  // const ur =new URLSearchParams();
-  //console.log(props.dataImg);
+  console.log(props.dataImg);
     return (<div id="un-item">
            <li className="cards__item container">
                <div className="cards__item__link" >
@@ -18,19 +17,19 @@ function SingleProduct(props) {
              <img src={`images/${props.dataImg.imageUrl}`}/>
                 </div>
                  <div className="overlay-container">
-            <p>Information sur le vehicule</p>
+            <p>Information sur le vehicule {props.dataImg.imageUrl}</p>
                  </div>
                  <div className="singleProduct_info">
                  <div><span>IMG</span>{props.dataImg.imageUrl}</div>
-                   <div><span>Modele</span>{props.data.modele}</div>
-                   <div><span>Prix</span>{props.data.prix}</div>
-                   <div><span>Kilometrage</span>{props.data.km}</div>
-                   <div><span>Transmission</span>{props.data.marque}</div>
-                   <div><span>Categorie</span>{props.data.modele}</div>
-                   <div><span>Essence</span>{props.data.prix}</div>
-                   <div><span>Puissance</span>{props.data.marque}</div>
-                   <div><span>Couleur</span>{props.data.modele}</div>
-                   <div><span>Traction</span>{props.data.prix}</div>
+                   <div><span>Modele</span>{props.data[0].modele}</div>
+                   <div><span>Prix</span>{props.data[0].prix}</div>
+                   <div><span>Kilometrage</span>{props.data[0].km}</div>
+                   <div><span>Transmission</span>{props.data[0].marque}</div>
+                   <div><span>Categorie</span>{props.data[0].modele}</div>
+                   <div><span>Essence</span>{props.data[0].prix}</div>
+                   <div><span>Puissance</span>{props.data[0].marque}</div>
+                   <div><span>Couleur</span>{props.data[0].modele}</div>
+                   <div><span>Traction</span>{props.data[0].prix}</div>
                    
                  </div>
                </div>

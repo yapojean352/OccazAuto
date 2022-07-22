@@ -19,7 +19,7 @@ function CardItems(props) {
                       <div className='texts'>
                           <h3>Title</h3>
                       <Boutton lien={props.path} className='btns' buttonStyle='btn--outline'
-                         buttonSize='btn--medium'>Cliquer Ici</Boutton>
+                         buttonSize='btn--medium'>Cliquer ici </Boutton>
                          </div>
                       </div>
                  </div>

@@ -7,6 +7,18 @@
       background-color: rgb(156, 221, 34) !important;
       width: 100%;
     } */
+    .filtercol{
+      background-color: rgb(235, 108, 192);
+      display: flex;
+      flex-direction: column;
+    }
+    .subCat{
+      margin-left: 20px;
+    }
+    .filtercol button{
+      background-color:yellowgreen;
+      margin-top: 30px;
+    }
   
   h1 {
     text-align: center;

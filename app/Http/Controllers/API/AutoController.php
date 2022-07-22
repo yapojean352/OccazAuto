@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\DB;
 
 class AutoController extends Controller
 {
+    /**
+     * funtion Add new products
+     * validation 
+     * param: $request  value post in request
+     * return: json
+     */
     public function Store(Request $request){
         $data = request()->validate([
             'marque' => ['', ''],
@@ -48,29 +54,6 @@ class AutoController extends Controller
             'address_longitude' => $data['address_longitude'],
             'address_latitude' => $data['address_latitude'],
         ]);
-
-//   foreach($files as $file){
-        // $filename = $file->getClientOriginalName();
-        // $extension = $file->getClientOriginalExtension();
-        // $check=in_array($extension,$allowedfileExtension);
-        //dd($check);
-        //if($check)
-        //{
-        //dd($request->files);
-        //$items= Item::create($request->all());
-        //recupeerer les photos de cet utlisateur
-        // $us = Auth::user()->id;
-        // $uservelos = Velo::where("users_id", $us)->paginate(100);
-        // foreach ($uservelos as $ts) {
-        //dd($request->image);
-    //     if($file = $request->hasFile('image')) {
-             
-    //         $file = $request->file('image') ;
-    //         $fileName = $file->getClientOriginalName() ;
-    //         $destinationPath = public_path().'/images' ;
-    //         $file->move($destinationPath,$fileName);
-    //       //  return redirect('/uploadfile');
-    // }
         if ($request->image) {
           //  foreach ($request->image as $photo) {
             $file = $request->file('image') ;
@@ -78,57 +61,124 @@ class AutoController extends Controller
             $destinationPath = public_path().'/images' ;
             $file->move($destinationPath,$fileName);
         }else {
-            # code...
+            # code...default file 
             $fileName='img-9.jpg';
         };
-      
-               // $filename = $request->image->store('uploads', 'public');
-               // $filename = $request->image->store('uploads', 'public');
-        Picture::create([
+Picture::create([
             'auto_id' => $v->id,
             'imageUrl' => $fileName,
         ]);
-               
-           // }
-       
-        
-        // $auto = new Auto;
-        // $auto->marque=$request->input('marque');
-        // $auto->modele=$request->input('modele');
-        // $auto->prix=$request->input('prix');
-        // $auto->km=$request->input('km');
-        // $auto->save();
         return response()->json(['status'=>200,
            'message'=>'add success'
 
         ]);
     }
-    public function listProd(){
-       // $tabautos=[];
-    //  $autos = DB::table('autos')
-    //  ->rightJoin('pictures', 'pictures.auto_id', '=', 'autos.id')->get();
-    //  ->where('pictures.auto_id', '=', 3)
-    $autos = Auto::with('pictures')->get();
+    /**function List all product
+     * Return Json
+     */
+    public function listProd($req){
+      if($req == "all"){
+        $req="";
+      }else{
+        $req=$req;
+      }
+      $url      = request()->input('CARAVAN 290');
+      $url_path = parse_url($url, PHP_URL_PATH);
+      $basename = pathinfo($url_path, PATHINFO_BASENAME);
+    $autos = Auto::with('pictures')->Where('modele', 'like', "%$req%")
+    ->orWhere('marque', 'like', "%$req%")->get();
      // $autos = Auto::all();
+   $total = count($autos);
+   $total= $total;
     //   $img = Picture::where('auto_id', 2)->get()->id;
 //return $result;
       return response()->json(['status'=>200,
-           'autos'=> $autos           
+           'autos'=> $autos,  
+          'sum'=> $total ,
+          'request'=>$req       
         ]);
     }
+    /** function list of product search 
+     * Param $seach  value search
+     * return: json
+    */
+    public function listProdsearch($s){
+     $autos = Auto::with('pictures')->Where('modele', 'like', "%$s%")
+     ->orWhere('marque', 'like', "%$s%")->get();
+      // $autos = Auto::all();
+     //   $img = Picture::where('auto_id', 2)->get()->id;
+ //return $result;
+       return response()->json(['status'=>200,
+            'autos'=> $autos           
+         ]);
+     }
 
 
-    public function getProd($id){
-       // $onevelo = velo::all()->where("id",$id->id);
-       //Auto::all()->where("id",$id->id);
-        $auto= Auto::find($id);
-       // $picture = Picture::where('auto_id', $id);
-        $picture = Picture::where('auto_id', '=', $id)->first();
-        //return $picture;
+    public function getProd($id){ 
+       $autos = Auto::Where('id', '=', "$id")->get();
+       //where('marque', 'like', "%$modele%");
+       $picture = Picture::where('auto_id', '=', $autos[0]['id'])->first();
         return response()->json(['status'=>200,
-        'auto'=> $auto,
-        'images'=> $picture,
+        'auto'=> $autos,
+        'images'=>$picture,
         ]);
-  
-      } 
+      }
+      /**Function all product model and */
+      public function getProdByModel($marque , $modele){ 
+        $autoMod = Auto::select('modele')->Where('marque', 'like', "%$marque%")->get();
+         return response()->json(['status'=>200,
+         'modele'=> $autoMod,
+         'images'=>$modele,
+         ]);
+       } 
+
+     /** Function get all category(Marque )
+      * RETURN Array of object
+      */
+    public function category() {
+        $categories = DB::table('autos as cat')->distinct('marque')->get('marque');
+        $sub_categories = DB::table('autos')
+        ->distinct('modele')->get('marque');
+        $things = Auto::all(); // or whatever Eloquent query you want that returns a collection
+       $grouped = $things->groupBy('modele');
+        return response()->json(['status'=>200,
+        'category'=> $categories,
+        'subcategory'=> $grouped,
+        ]);
+    }
+    /** Function group modele (category) by marque (categorie) */
+    public function subcategory() {
+           $things = Auto::select('modele','marque')->distinct('marque'); // or whatever Eloquent query you want that returns a collection
+          $grouped[] = $things->get()->groupBy('marque');
+           return response()->json(['status'=>200,
+           'subcategory'=> $grouped,
+           ]);
+       }
+       /****get list auto filter by marque or modele or carr  */
+  //      public function getListeAutos()
+  //      {
+  //  // donees a envoyes a la vue
+  //          if (request()->input('marque') || request()->input('modele')) {
+              
+  //              $this->marque = request()->input('marque');
+  //              $cat = request()->input('modele');
+   
+  //          } else {
+  //              $this->marque = "";
+  //              $cat = "";
+  //          }
+   
+  //          $autoch = Auto::Where('id', '!=', 0)
+  //              ->where(function ($q) {
+  //                  $q->orwhere('modele', 'like', "%$this->marque%");
+  //                  $q->orwhere('marque', 'like', "%$this->marque%");
+  //                  // ->orWhere('type', 'public');
+  //              })
+  //              return response()->json(['status'=>200,
+  //              'autos'=> $autoch,  
+                    
+  //           ]);
+   
+  //         // return view('velos.listesVelos', compact('velos'));
+  //      }
 }

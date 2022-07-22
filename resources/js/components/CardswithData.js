@@ -1,43 +1,38 @@
 import axios from 'axios';
-import React from 'react';
+import { createContext } from 'react';
+import { Alert } from 'bootstrap';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import CardItems from './CardItems';
 import "./Cards.css";
 import Catalogue from './Catalogue';
+import FiltreTest from './FiltreTest';
+import Lipucemodele from './Lipucemodele';
+import Lipucefilterdata from './Lipucefilterdata';
+import ChildCp from './ChildCp';
 
+//https://www.youtube.com/watch?v=sCZHGZocytA
 class CardswithData extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-      autos:[],
-      laoding:true,
+      laoding:false,
+      s:'all',
       }
     }
-     componentDidMount(){
-    axios.get('http://localhost:8000/api/list').then(response =>{
-      this.setState({
-        autos: response.data.autos,
-        laoding:false,
-      })
-      console.log(response.data);
-    })
-   
-      // if(rest.data.status === 200){
-      // this.setState({
-      //   autos:rest.data.autos,
-      // });
-      // }
-     // this.state=rest.data.autos;
-    //  console.log(this.state);
-    }
-   
-    render() {
+ render() {
       var contenHTML="";
       var   imgd="";
-      const { autos , laoding} = this.state;
+      const { autos , laoding,sum} = this.state;
+      console.log(this.props)
+ 
+      
    if(laoding){
     contenHTML = <h4>Laoding ...</h4>
    }else{
-    contenHTML=  autos.map((carInfo,i)=>{
+    
+  //  search('');
+    contenHTML=  this.props.products.auto.map((carInfo,i)=>{
       carInfo.pictures.map((v ,s)=>{
         imgd = v.imageUrl;
       }
@@ -57,18 +52,23 @@ class CardswithData extends React.Component {
       })
 
    }
-
-    // alert(laoding);
-        return (<div className="cards">
+        return (<div className="cards">          
         <div className="cards__container">
-            <div className='cards__wrapper'>  
+        <div className="page-title-panel">
+                 <span>{this.props.products.sum} Resutats trouvée</span>
+                 <span>tri parccc</span>
+                 <div><label>search</label>
+                
+        </div>
+       
+                </div>
+            <div className='cards__wrapper'> 
                 <ul className="cards__items">
                   {
                     contenHTML
                   }
                
                 </ul>
-
             </div>
 
         </div>

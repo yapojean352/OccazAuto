@@ -11,15 +11,15 @@ export default class Singlepage extends Component {
     }
   }
    componentDidMount(){
-       const auto_id = this.props.match.params.id;
- //console.log(this.props);
-  axios.get(`http://localhost:8000/api/product/${auto_id}`).then(response =>{
+    // const {categorie, modele} = useParams();
+       const id = this.props.match.params.id;
+    axios.get(`http://localhost:8000/api/vehicule-usager/${id}`).then(response =>{
     this.setState({
       auto: response.data.auto,
       images: response.data.images,
       laoding:false,
     })
-   console.log(response.data)
+   console.log(response.data.auto)
  })
 
   }
@@ -29,7 +29,7 @@ export default class Singlepage extends Component {
  if(laoding){
   contenHTML = <h4>Laoding ...</h4>
  }else{
-  contenHTML = <div>
+  contenHTML = <div><h4>details products</h4>
    <SingleProduct data={auto} dataImg={images} />
   </div>
   // contenHTML=  auto.map((carInfo,i)=>{

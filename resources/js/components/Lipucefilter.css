@@ -19,10 +19,13 @@
 } */
 
 .menubp{
-    background-color: rgb(53, 16, 16);
+    background-color: rgb(231, 224, 224);
     width: 100%;
 }
+.menubp li{
+    margin-left: 10px;
+}
 .afficher li {
-    background-color: rgb(13, 167, 38);
+    background-color: rgb(187, 245, 197);
     width: 100%;
 }
