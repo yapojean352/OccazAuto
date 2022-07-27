@@ -1,12 +1,8 @@
 import React from 'react';
-import {useState,useEffect,createContext}  from 'react';
-import CardItems from './CardItems';
 import "./Cards.css";
-import Catalogue from './Catalogue';
-import Lipucemodele from './Lipucemodele';
 import Lipucefilter from './Lipucefilter';
 import './Lipucefilterdata.css'
-import CardswithData from './CardswithData';
+import TypeCarroFilter from './TypeCarroFilter';
 /**
  * donnees de la marque  qui envoi l id de la arque auto au composant charger d afficher 
  * les modele
@@ -44,8 +40,6 @@ class Lipucefilterdata extends React.Component {
     handleInStockChange(e) {
       this.props.onInStockChange(e.target.checked);
     }
-   
-
     componentDidMount(){
     axios.get(`http://localhost:8000/api/category/`).then(response =>{
         this.setState({
@@ -53,43 +47,28 @@ class Lipucefilterdata extends React.Component {
           laoding:false,
         })
         console.log(response.data);
-      })
-     
+      }) 
     }
-    // componentWillUnmount(){
-
-    // }
     render() { 
       var contenHTML="test";
-     // this.props.fc = new this.props.fc("tir")
-    
-    //  console.log(this.props.fil)
-    // console.log(this.state.val)
-      // var setVal =(param)=>this.setState({this.state.val
-      // this.props.df(this.state.val);
-      // // }); 
       const {categor,laoding} = this.state;
-   console.log(this.val)
    if(laoding){
     contenHTML = <h4>Laoding ...</h4>
    }else{
     contenHTML=this.state.category.map((cate,i)=>{
-    //  dataFilter =createContext({cate})
       return (
           <div>
-            <span>key {i}</span>
-            <span> mar{cate.marque}</span>
-            <Lipucefilter fParent={this.onParent} pada={this.state.val} pafr={this.handleFilterTextChange} marquename={cate.marque}/>
+            <Lipucefilter key={i} fParent={this.onParent} pada={this.state.val} pafr={this.handleFilterTextChange} marquename={cate.marque}/>
           </div>
         );
       })
    }
-        return (<div className="filter-marque"> <span>Marque</span>
+        return (<div className="filter-marque">  <strong>Modele ET Marques</strong>
             {contenHTML}
+            <TypeCarroFilter cParent={this.onParent}/>
         </div>);
 }
   }
-  
 export default Lipucefilterdata;
 
 

@@ -7,5 +7,4 @@ function PiedPage() {
         </div>
     )
 }
-
 export default PiedPage

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SingleProduct from '../SingleProduct';
 import '../SinglePage.css';
+/**
+ * componenet child SingleProduct
+ */
 export default class Singlepage extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +14,7 @@ export default class Singlepage extends Component {
     }
   }
    componentDidMount(){
-    // const {categorie, modele} = useParams();
-       const id = this.props.match.params.id;
+    const id = this.props.match.params.id;
     axios.get(`http://localhost:8000/api/vehicule-usager/${id}`).then(response =>{
     this.setState({
       auto: response.data.auto,
@@ -21,7 +23,6 @@ export default class Singlepage extends Component {
     })
    console.log(response.data.auto)
  })
-
   }
   render() {
     var contenHTML="";
@@ -32,19 +33,7 @@ export default class Singlepage extends Component {
   contenHTML = <div><h4>details products</h4>
    <SingleProduct data={auto} dataImg={images} />
   </div>
-  // contenHTML=  auto.map((carInfo,i)=>{
-  //   alert(window.location.pathname);
-  // var type="/OccazAuto/public";
-  //   return (
-  //       <div>
-  //     <p>{carInfo.id}</p>
-  //       </div>
-  //     );
-  //  })
-
  }
-
-  // alert(laoding);
       return (<div className="home-container">
       <div className='singlePage-content'>
                 {

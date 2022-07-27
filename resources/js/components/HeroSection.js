@@ -1,7 +1,6 @@
 import React from 'react'
 import { Boutton } from './Boutton'
 import './HeroSection.css'
-import Partenaires from './Partenaires'
 /* === page d acceuil  ====== */
 function HeroSection() {
     return (<div className='heros-container'>
@@ -17,5 +16,4 @@ function HeroSection() {
         </div>
     )
 }
-
 export default HeroSection

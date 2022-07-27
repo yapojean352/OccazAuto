@@ -15,7 +15,6 @@ function Menubar(){
     const showButton=()=>{
         if(window.innerWidth < 960){
         setButton(false);
-
         }else{
             setButton(true);  
         }
@@ -47,17 +46,17 @@ function Menubar(){
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/public/vehicule-usager' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/OccazAuto/public/vehicule-usager/' className='nav-links' onClick={closeMobileMenu}>
                         Trouver un véhicule
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/public/A-vendre' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/OccazAuto/public/A-vendre/' className='nav-links' onClick={closeMobileMenu}>
                          Vendre un véhicule
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/public/financement' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/OccazAuto/public/financement/' className='nav-links' onClick={closeMobileMenu}>
                          Financements
                            </Link>
                        </li>

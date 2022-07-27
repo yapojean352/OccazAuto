@@ -1,16 +1,10 @@
-import axios from 'axios';
-import { createContext } from 'react';
-import { Alert } from 'bootstrap';
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import CardItems from './CardItems';
 import "./Cards.css";
-import Catalogue from './Catalogue';
-import FiltreTest from './FiltreTest';
-import Lipucemodele from './Lipucemodele';
-import Lipucefilterdata from './Lipucefilterdata';
-import ChildCp from './ChildCp';
-
+/**
+ * component of all product 
+ * component child CardItems
+ */
 //https://www.youtube.com/watch?v=sCZHGZocytA
 class CardswithData extends React.Component {
     constructor(props) {
@@ -24,14 +18,9 @@ class CardswithData extends React.Component {
       var contenHTML="";
       var   imgd="";
       const { autos , laoding,sum} = this.state;
-      console.log(this.props)
- 
-      
    if(laoding){
     contenHTML = <h4>Laoding ...</h4>
    }else{
-    
-  //  search('');
     contenHTML=  this.props.products.auto.map((carInfo,i)=>{
       carInfo.pictures.map((v ,s)=>{
         imgd = v.imageUrl;
@@ -50,32 +39,25 @@ class CardswithData extends React.Component {
           </div>
         );
       })
-
    }
         return (<div className="cards">          
         <div className="cards__container">
-        <div className="page-title-panel">
+          <div className="page-title-panel">
                  <span>{this.props.products.sum} Resutats trouvée</span>
-                 <span>tri parccc</span>
-                 <div><label>search</label>
-                
+                 <span>trier ASC-DESC</span>
+                 <div><label>search</label>  
+          </div>
         </div>
-       
-                </div>
             <div className='cards__wrapper'> 
                 <ul className="cards__items">
                   {
                     contenHTML
                   }
-               
                 </ul>
             </div>
-
         </div>
     </div>
 );
     }
   }
-  
-
-export default CardswithData
+export default CardswithData;

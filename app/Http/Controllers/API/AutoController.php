@@ -86,7 +86,8 @@ Picture::create([
       $url_path = parse_url($url, PHP_URL_PATH);
       $basename = pathinfo($url_path, PATHINFO_BASENAME);
     $autos = Auto::with('pictures')->Where('modele', 'like', "%$req%")
-    ->orWhere('marque', 'like', "%$req%")->get();
+    ->orWhere('marque', 'like', "%$req%")
+    ->orWhere('carrosserie', 'like', "%$req%")->get();
      // $autos = Auto::all();
    $total = count($autos);
    $total= $total;
@@ -114,7 +115,7 @@ Picture::create([
      }
 
 
-    public function getProd($id){ 
+    public function getProd($id ){ 
        $autos = Auto::Where('id', '=', "$id")->get();
        //where('marque', 'like', "%$modele%");
        $picture = Picture::where('auto_id', '=', $autos[0]['id'])->first();
@@ -131,6 +132,16 @@ Picture::create([
          'images'=>$modele,
          ]);
        } 
+            /** Function get all carrosserie(Marque )
+      * RETURN Array of object
+      */
+       
+      public  function getCarrosserie(){
+        $carrosserie = DB::table('autos')->distinct('carrosserie')->get('carrosserie');
+        return response()->json(['status'=>200,
+        'typeCarrosserie'=> $carrosserie,
+        ]);
+    }
 
      /** Function get all category(Marque )
       * RETURN Array of object

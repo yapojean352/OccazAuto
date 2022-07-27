@@ -1,14 +1,8 @@
 
 import React,{useState,useEffect}  from 'react';
-import  { Boutton } from './Boutton';
 import './Menubar.css' ;
-import { Link } from "react-router-dom";
-import Lipucefilter from './Lipucefilter';
 import "./Sidenav.css"
-import FiltreTest from './FiltreTest';
 import Lipucefilterdata from './Lipucefilterdata';
-
-
 function SidenavModel(){
     //le state a false
     const [click,setClick]= useState(true);
@@ -26,8 +20,6 @@ function SidenavModel(){
                  </div> 
                     <div id="masque-af" className={click ? 'afficher':'masquer'} >
                         <div className="container-masque">
-                    {/* <TypeCarroFilter/> */}
-                       {/* <FiltreTest/> */}
                     <Lipucefilterdata/>  
                     </div>
                     </div>

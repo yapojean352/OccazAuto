@@ -1,15 +1,9 @@
 import React from 'react';
-
 import ReactDOM from 'react-dom';
-import Name from './Name';
-
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
 import Menubar from './Menubar';
 import {BrowserRouter as Router,
     Switch,
-    Route,
+    Route,HashRouter
     } from "react-router-dom";
 
 import Home from './pages/Home';
@@ -65,21 +59,24 @@ import ViewPage from './pages/viewPage';
 //Quiz
 function Root() {
     //let {slug} = useParams();
+   
     return (
           <div className="App page-container">
               <div className="content-wrap">
-            <Router>
+              <Router>
                 <Menubar/>
-                    <Switch> 
-                      <Route path='/OccazAuto/public/' exact component={Home} />
-                      <Route path='/OccazAuto/public/A-vendre'  component={Avendre} />
-                       <Route path='/OccazAuto/public/vehicule-usager'   component={Product} />
-                       {/* <Route path='/OccazAuto/public/:seach'  component={Product} /> */}
-                      {/*<Route path='/OccazAuto/public/signUp'  component={SignUp} />
-                      <Route path='/OccazAuto/public/financement'  component={financement} />*/}
-                      <Route  path='/OccazAuto/public/:id'   component={Singlepage}/>    
-                    </Switch> 
-             </Router> 
+                  <Switch>
+                      <Route exact path='/OccazAuto/public/'  component={Home} />
+                      <Route exact path='/OccazAuto/public/A-vendre/'  component={Avendre} />
+                       <Route exact path='/OccazAuto/public/vehicule-usager/'   component={Product} />
+                       {/* <Route exact path='/OccazAuto/public/:carrosserie'  component={Product} /> */}
+                      {/*<Route exact path='/OccazAuto/public/signUp'  component={SignUp} />
+                      <Route exact path='/OccazAuto/public/financement'  component={financement} />*/}
+                       {/* <Route exact path='/OccazAuto/public/vehicule-usager/:marque-:modele-:id' component={Singlepage}  /> */}
+                      <Route exact  path='/OccazAuto/public/:id'   component={Singlepage}/>    
+                  </Switch>
+             </Router>
+           
              </div>
              {/* /*  voir le footer dans lequery version mobile*/ }
             <Footer/>
@@ -91,5 +88,5 @@ function Root() {
 export default Root;
 
 if (document.getElementById('root')) {
-    ReactDOM.render(<Root />, document.getElementById('root'));
+    ReactDOM.render(<Router><Root/></Router>, document.getElementById('root'));
 }

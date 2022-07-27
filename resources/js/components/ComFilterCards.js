@@ -18,9 +18,7 @@ class ComFilterCards extends Component {
       filterText: 'all',
       inStockOnly: false,
       sum:"",
-
-    };
-    
+    }; 
     this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
     this.handleInStockChange = this.handleInStockChange.bind(this);
     this.searchT = this.searchT.bind(this);
@@ -39,7 +37,6 @@ class ComFilterCards extends Component {
   }
   componentDidMount(){
     this.searchT('all'); 
-    console.log(this.props.filterText)
    }
   searchT(key){
       var searchT= true ;
@@ -62,45 +59,37 @@ class ComFilterCards extends Component {
        })
      })
     }else{
- console.log(this.props.filterText)
      axios.get(`http://localhost:8000/api/list/${key}`).then(response =>{
        this.setState({
          auto: response.data.autos,
          inStockOnly: true,
          sum: response.data.sum,
+         filterText:key,
          laoding:false,
        })
    console.log(response.data.autos)
      })
     }
- 
      }  
-  
   render() {
-    console.log(this.state.auto)
-
     return (
-      
       <div className='catalogue-display ' data-post-type='auto-usager'>
       <div className='catalogue-container'>
           <div className='row'>
            <div className='filters-colunns'>
                 <span className="filter-icon"><h3><i className="fa fa-sliders">   Filter</i> </h3></span>
               <div className="filter-produit">
-                <strong>Model and  marques{this.state.filterText}</strong><span>crochet</span>
+                <strong>Modele ET Marques</strong><span>crochet</span>
                 <Lipucefilterdata  filterText={this.state.filterText}
             inStockOnly={this.state.inStockOnly}
             funT={this.searchT} 
             onFilterTextChange={this.handleFilterTextChange}
             onInStockChange={this.handleInStockChange}/>
               </div>
-             
                <div  className="filter-fixed-container filter-fixed-container-event-enable  fixed">
                 <div className="filters-container">
-            
                 </div>
                </div>
-
            </div>
            <div className='columns listing-column'>
                  <div>Resultats</div>
@@ -113,11 +102,9 @@ class ComFilterCards extends Component {
               </div>
            </div>
           </div>
-
       </div>
   </div>
   )
   }
 }
-
 export default ComFilterCards
