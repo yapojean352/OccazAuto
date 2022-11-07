@@ -4,7 +4,7 @@ import CardswithDataFunc from './CardswithDataFunc';
 import "./funccom.css";
 import LipucefilterdataFunc from './LipucefilterdataFunc';
 // const api=axios.create({
-//   baseUrl:"http://localhost:8000/api/list/all"
+//   baseUrl:"https://bsoccasionsplus.ca/OccazAuto/api/list/all"
 // })
 
 /**Composant parent avec les states */
@@ -17,7 +17,7 @@ import LipucefilterdataFunc from './LipucefilterdataFunc';
  * dans ProductTable et définir les valeurs des champs du formulaire dans filters etat. */
 function ComFilterCardsConsFunction () {
    // Similaire à componentDidMount et componentDidUpdate ::' inStockOnly: false,,',
-   var  baseUrl='http://localhost:8000/api/list/'
+   var  baseUrl='https://bsoccasionsplus.ca/OccazAuto/api/list/'
    const [dataProduct , setdataProduct] = useState([])
    const [listFilter , setlistFilter] = useState([])
    const [click , setclick] = useState(false)
@@ -40,7 +40,7 @@ var  addList=(e)=>{
 var searchT=(key)=>{
   var tab=[];
   const queryParams = new URLSearchParams(window.location.search);
-  var  baseUrl='http://localhost:8000/api/list/'
+  var  baseUrl='https://bsoccasionsplus.ca/OccazAuto/api/list/'
     var searchT= true ;
   var val=" ";
   let CancelToken;
@@ -53,7 +53,7 @@ var searchT=(key)=>{
  if(!searchT){
  const pp = async()=>{
  try{
-  const res= await axios.get('http://localhost:8000/api/list/all');
+  const res= await axios.get('https://bsoccasionsplus.ca/OccazAuto/api/list/all');
   console.log(res.data);
   setdataProduct(res.data.autos)
  }catch(er){}
