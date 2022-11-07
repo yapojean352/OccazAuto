@@ -5568,7 +5568,7 @@ var Singlepage = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       var id = this.props.match.params.id;
-      axios.get("https://bsoccasionsplus.ca/Occaz-Auto/apivehicule-usager/".concat(id)).then(function (response) {
+      axios.get("https://bsoccasionsplus.ca/Occaz-Auto/api/vehicule-usager/".concat(id)).then(function (response) {
         _this2.setState({
           auto: response.data.auto,
           images: response.data.images,
