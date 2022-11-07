@@ -163,7 +163,7 @@ axios.get(`${baseUrl}`,{CancelToken:CancelToken.token}).then(response =>{
              <div className="page-title">
             </div>
             <div className="cadre-centre">
-        <h5> Example display APIx ysy</h5>
+        <h5> Example display APIx cpanels=s</h5>
         <CardswithDataFunc products={dataProduct} ker={filterText}/>
             </div>
          </div>

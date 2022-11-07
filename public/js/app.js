@@ -3426,7 +3426,7 @@ function ComFilterCardsConsFunction() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "cadre-centre",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
-              children: " Example display APIx ysy"
+              children: " Example display APIx cpanels=s"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CardswithDataFunc__WEBPACK_IMPORTED_MODULE_2__["default"], {
               products: dataProduct,
               ker: filterText
