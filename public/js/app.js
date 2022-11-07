@@ -3165,7 +3165,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
  // const api=axios.create({
-//   baseUrl:"https://bsoccasionsplus.ca/OccazAuto/api/list/all"
+//   baseUrl:"https://bsoccasionsplus.ca/Occaz-Auto/api/list/all"
 // })
 
 /**Composant parent avec les states */
@@ -3183,7 +3183,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function ComFilterCardsConsFunction() {
   // Similaire à componentDidMount et componentDidUpdate ::' inStockOnly: false,,',
-  var baseUrl = 'https://bsoccasionsplus.ca/OccazAuto/api/list/';
+  var baseUrl = 'https://bsoccasionsplus.ca/Occaz-Auto/api/list/';
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -3238,7 +3238,7 @@ function ComFilterCardsConsFunction() {
   var searchT = function searchT(key) {
     var tab = [];
     var queryParams = new URLSearchParams(window.location.search);
-    var baseUrl = 'https://bsoccasionsplus.ca/OccazAuto/api/list/';
+    var baseUrl = 'https://bsoccasionsplus.ca/Occaz-Auto/api/list/';
     var searchT = true;
     var val = " ";
     var CancelToken;
@@ -3259,7 +3259,7 @@ function ComFilterCardsConsFunction() {
                 case 0:
                   _context.prev = 0;
                   _context.next = 3;
-                  return axios.get('https://bsoccasionsplus.ca/OccazAuto/api/list/all');
+                  return axios.get('https://bsoccasionsplus.ca/Occaz-Auto/api/list/all');
 
                 case 3:
                   res = _context.sent;
@@ -3426,7 +3426,7 @@ function ComFilterCardsConsFunction() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "cadre-centre",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
-              children: " Example display APIx cpanels=s"
+              children: " Example display APIx cpanels=js"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CardswithDataFunc__WEBPACK_IMPORTED_MODULE_2__["default"], {
               products: dataProduct,
               ker: filterText
