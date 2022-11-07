@@ -52,7 +52,7 @@ class CardswithDataFunc extends React.Component {
       }
       );
     
-    var type="/OccazAuto";
+    var type="/Occaz-Auto";
  
       return (
           <div>

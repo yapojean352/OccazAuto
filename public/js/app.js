@@ -2678,7 +2678,7 @@ var CardswithDataFunc = /*#__PURE__*/function (_React$Component) {
           carInfo.pictures.map(function (v, s) {
             imgd = v.imageUrl;
           });
-          var type = "/OccazAuto";
+          var type = "/Occaz-Auto";
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CardItems__WEBPACK_IMPORTED_MODULE_1__["default"], {
               src: "public/images/".concat(imgd),
