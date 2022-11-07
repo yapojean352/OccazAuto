@@ -15,7 +15,7 @@ export default class Singlepage extends Component {
   }
    componentDidMount(){
     const id = this.props.match.params.id;
-    axios.get(`http://localhost:8000/api/vehicule-usager/${id}`).then(response =>{
+    axios.get(`https://bsoccasionsplus.ca/Occaz-Auto/apivehicule-usager/${id}`).then(response =>{
     this.setState({
       auto: response.data.auto,
       images: response.data.images,
