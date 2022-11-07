@@ -1,0 +1,38 @@
+.puce{
+    content: "\f054";
+    background-color: rgb(151, 19, 19);
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: FontAwesome;
+}
+.O , .C{
+    float: right;
+}
+/* .menubf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.733);
+    flex-basis: 100%;
+    cursor: pointer;
+} */
+.fer{
+    display: none;
+}
+.ou{
+    display: block;
+}
+.menubp{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.menubp li{
+    margin-left: 10px;
+}
+.afficher li {
+    /* background-color: rgb(187, 245, 197); */
+    cursor: pointer;
+    width: calc(100% - 20px);
+}

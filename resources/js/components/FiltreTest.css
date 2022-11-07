@@ -1,0 +1,91 @@
+/* .filter-cat{
+    background-color: rgb(63, 26, 196);
+    color: white;
+}
+
+.filter-cat li{
+    background-color: rgb(147, 211, 150);
+    display: block;
+}
+.active{
+   display: none; 
+}     */
+/* .filter-cat li {
+    display: none; 
+    background-color: rgb(173, 51, 51);
+} */
+/* style pour les lien dans le footer + ou -  */
+/*  fermer chevron */
+     .moins:after {
+        content: "\f078";
+        font-size: 20px;
+        cursor: pointer;
+        float: right;
+        font-family: FontAwesome;
+    }
+ #nav li{
+     /* display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+      list-style: none; */
+      margin: 0;
+      padding: 0;
+      display: block;
+     background-color: rgb(102, 59, 59);
+  }
+    .plus:after {
+        content: "\f054";
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: FontAwesome;
+    }
+    body>nav ul {
+
+        list-style: none;
+
+        padding-left: 0;
+        display: none;
+
+    }
+
+
+
+    /* body>nav>ul.active {
+        display: block;
+
+    } */
+    /* body>nav>ul.active {
+        display: none;
+
+    } */
+   
+    .menu-p {
+        display: block;
+
+    }
+
+
+    .menu-p {
+        cursor: pointer;
+        text-transform: uppercase;
+        color: rgb(0, 5, 10);
+        font-size: 16px;
+        border: solid 5px black;
+        padding: 10px;
+        /* background-color:  rgba(14, 144, 153, 0.726);
+        padding: 40px;
+        border-radius: 20px; */
+    }
+     /*== cacher les ul de li menu */
+     #nav>ul ul {
+        display: none;
+
+    }
+    /* .active{
+        display: none;
+      } */
+      .fermerC{
+          display: none;
+      }

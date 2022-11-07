@@ -1,0 +1,13 @@
+.child-carro-container{
+   border: 2px solid green;
+    min-width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+.type__carro__info{
+    display: flex;
+    flex-direction: row;
+}
+.type__carro__link{
+    cursor: pointer;
+}

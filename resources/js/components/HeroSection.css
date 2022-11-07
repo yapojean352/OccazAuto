@@ -1,0 +1,31 @@
+video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+z-index: -1;
+}
+.btns-hero{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+  justify-content: center;
+  background-color: rgb(136, 247, 102);
+}
+.btn{
+  margin: 5px;
+  flex-basis: calc(50%-10px);
+}
+.heros-container{
+    /* background-image: url('images/img-home.jpg') center center/cover no-repeat; */
+    min-height: 750px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #18A857 0%, #18A857 100%);
+    padding-top: 100px;
+}

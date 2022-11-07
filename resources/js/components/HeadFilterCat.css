@@ -1,0 +1,22 @@
+/* chevron fermer */
+.C:after {
+    content: "\f054";
+    font-size: 20px;
+    cursor: pointer;
+
+    font-family: FontAwesome;
+}
+/* chevron ouvert */
+.O:after {
+    content: "\f078";
+    font-size: 20px;
+    cursor: pointer;
+    font-family: FontAwesome;
+}
+.menubf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    flex-basis: 100%;
+}

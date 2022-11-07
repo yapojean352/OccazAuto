@@ -1,0 +1,10 @@
+  
+  /* auto grid */
+  .cards__prod>* {
+flex-basis: calc(33.33% - 10px) !important;
+  }
+  .cards__prod {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
