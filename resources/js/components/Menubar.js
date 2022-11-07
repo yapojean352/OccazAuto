@@ -33,7 +33,7 @@ function Menubar(){
           <header className="bar-fixed">
                <nav className="navbar">
                     <div className="navbar-container">
-                    <Link to='/OccazAuto/' className="navbar-logo" onClick={closeMobileMenu}>OccazAuto</Link>
+                    <Link to='/Occaz-Auto/' className="navbar-logo" onClick={closeMobileMenu}>OccazAuto</Link>
                     </div>
                     <div className='menu-icon' onClick={handleClick}>
                     <div className={ click ? 'close':'open'}>{ click ? <i className="fa fa-times"></i>:<i className="fa fa-bars"></i>}
@@ -46,22 +46,22 @@ function Menubar(){
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/vehicule-usager/' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/Occaz-Auto/vehicule-usager/' className='nav-links' onClick={closeMobileMenu}>
                         Trouver un véhicule
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/A-vendre/' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/Occaz-Auto/A-vendre/' className='nav-links' onClick={closeMobileMenu}>
                          Vendre un véhicule
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/Financement' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/Occaz-Auto/Financement' className='nav-links' onClick={closeMobileMenu}>
                          Financements
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/OccazAuto/plus' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/Occaz-Auto/plus' className='nav-links' onClick={closeMobileMenu}>
                          Plus
                            </Link>
                        </li>

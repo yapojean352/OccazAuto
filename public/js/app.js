@@ -4570,7 +4570,7 @@ function Menubar() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "navbar-container",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-            to: "/OccazAuto/",
+            to: "/Occaz-Auto/",
             className: "navbar-logo",
             onClick: closeMobileMenu,
             children: "OccazAuto"
@@ -4597,7 +4597,7 @@ function Menubar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/OccazAuto/vehicule-usager/",
+              to: "/Occaz-Auto/vehicule-usager/",
               className: "nav-links",
               onClick: closeMobileMenu,
               children: "Trouver un v\xE9hicule"
@@ -4605,7 +4605,7 @@ function Menubar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/OccazAuto/A-vendre/",
+              to: "/Occaz-Auto/A-vendre/",
               className: "nav-links",
               onClick: closeMobileMenu,
               children: "Vendre un v\xE9hicule"
@@ -4613,7 +4613,7 @@ function Menubar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/OccazAuto/Financement",
+              to: "/Occaz-Auto/Financement",
               className: "nav-links",
               onClick: closeMobileMenu,
               children: "Financements"
@@ -4621,7 +4621,7 @@ function Menubar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/OccazAuto/plus",
+              to: "/Occaz-Auto/plus",
               className: "nav-links",
               onClick: closeMobileMenu,
               children: "Plus"
@@ -4765,23 +4765,23 @@ function Root() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Menubar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Switch, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/OccazAuto/",
+            path: "/Occaz-Auto/",
             component: _pages_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/OccazAuto/A-vendre/",
+            path: "/Occaz-Auto/A-vendre/",
             component: _pages_Avendre__WEBPACK_IMPORTED_MODULE_4__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/OccazAuto/vehicule-usager/",
+            path: "/Occaz-Auto/vehicule-usager/",
             component: _pages_product__WEBPACK_IMPORTED_MODULE_5__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/OccazAuto/financement",
+            path: "/Occaz-Auto/financement",
             component: _pages_ApifuncDatas__WEBPACK_IMPORTED_MODULE_9__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/OccazAuto/:id",
+            path: "/Occaz-Auto/:id",
             component: _pages_Singlepage__WEBPACK_IMPORTED_MODULE_8__["default"]
           })]
         })]
