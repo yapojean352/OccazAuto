@@ -46,7 +46,7 @@ function Menubar(){
                            </Link>
                        </li>
                        <li className='nav-item'> 
-                          <Link to='/Occaz-Auto/vehicule-usager/' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/Occaz-Auto/vehicule-usager' className='nav-links' onClick={closeMobileMenu}>
                         Trouver un véhicule
                            </Link>
                        </li>

@@ -4644,7 +4644,7 @@ function Menubar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/Occaz-Auto/vehicule-usager/",
+              to: "/Occaz-Auto/vehicule-usager",
               className: "nav-links",
               onClick: closeMobileMenu,
               children: "Trouver un v\xE9hicule"
