@@ -37,6 +37,43 @@ function ComFilterCardsConsFunction () {
 var  addList=(e)=>{
   setlistFilter(e)
 }
+var removeParam =(key, sourceURL)=> {
+  var rtn = sourceURL.split("?")[0],
+      param,
+      params_arr = [],
+      queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+  if (queryString !== "") {
+      params_arr = queryString.split("&");
+      for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+          param = params_arr[i].split("=")[0];
+          if (param === key) {
+              params_arr.splice(i, 1);
+          }
+      }
+      if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
+  }
+  return rtn;
+}
+var removeKey=(keyD)=>{
+  const queryParams = new URLSearchParams(window.location.search);
+  const modele= queryParams.get('modele');
+  const carrosserie= queryParams.get('carrosserie');
+//delete doublon
+  const newArray =listFilter.filter((itemD)=>{
+   return  itemD !==keyD;
+  })
+ if(modele == keyD ){
+  window.location.href=removeParam('modele',window.location.href)
+  }
+  if(carrosserie == keyD ){
+    window.location.href=removeParam('carrosserie',window.location.href)
+  }
+  if(keyD =='all'){
+    window.location.href="https://bsoccasionsplus.ca/Occaz-Auto/Financement";
+    addList([]);
+  }
+  addList(newArray);
+}
 var searchT=(key)=>{
   var tab=[];
   const queryParams = new URLSearchParams(window.location.search);
@@ -85,7 +122,6 @@ window.location.search.includes("?modele")== true?
 }
 //delete doublon
 tab=Array.from(new Set(tab));
-console.log(tab)
 axios.get(`${baseUrl}`,{CancelToken:CancelToken.token}).then(response =>{
     //  setState({
     //    auto: response.data.autos,
@@ -95,7 +131,7 @@ axios.get(`${baseUrl}`,{CancelToken:CancelToken.token}).then(response =>{
     //    laoding:false,
     //    listFilter: tab,
     //  })
-   // setfilterText(key);
+    addList(tab);
     setsum(response.data.sum);
     setdataProduct(response.data.autos)
 
@@ -163,7 +199,7 @@ axios.get(`${baseUrl}`,{CancelToken:CancelToken.token}).then(response =>{
              <div className="page-title">
             </div>
             <div className="cadre-centre">
-        <h5> Example display APIx cpanels=js</h5>
+        <h5> Example display  cpanel</h5>
         <CardswithDataFunc products={dataProduct} ker={filterText}/>
             </div>
          </div>

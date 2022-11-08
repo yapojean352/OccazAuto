@@ -3235,6 +3235,54 @@ function ComFilterCardsConsFunction() {
     setlistFilter(e);
   };
 
+  var removeParam = function removeParam(key, sourceURL) {
+    var rtn = sourceURL.split("?")[0],
+        param,
+        params_arr = [],
+        queryString = sourceURL.indexOf("?") !== -1 ? sourceURL.split("?")[1] : "";
+
+    if (queryString !== "") {
+      params_arr = queryString.split("&");
+
+      for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+        param = params_arr[i].split("=")[0];
+
+        if (param === key) {
+          params_arr.splice(i, 1);
+        }
+      }
+
+      if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
+    }
+
+    return rtn;
+  };
+
+  var removeKey = function removeKey(keyD) {
+    var queryParams = new URLSearchParams(window.location.search);
+    var modele = queryParams.get('modele');
+    var carrosserie = queryParams.get('carrosserie'); //delete doublon
+
+    var newArray = listFilter.filter(function (itemD) {
+      return itemD !== keyD;
+    });
+
+    if (modele == keyD) {
+      window.location.href = removeParam('modele', window.location.href);
+    }
+
+    if (carrosserie == keyD) {
+      window.location.href = removeParam('carrosserie', window.location.href);
+    }
+
+    if (keyD == 'all') {
+      window.location.href = "https://bsoccasionsplus.ca/Occaz-Auto/Financement";
+      addList([]);
+    }
+
+    addList(newArray);
+  };
+
   var searchT = function searchT(key) {
     var tab = [];
     var queryParams = new URLSearchParams(window.location.search);
@@ -3311,7 +3359,6 @@ function ComFilterCardsConsFunction() {
 
 
       tab = Array.from(new Set(tab));
-      console.log(tab);
       axios.get("".concat(baseUrl), {
         CancelToken: CancelToken.token
       }).then(function (response) {
@@ -3323,7 +3370,7 @@ function ComFilterCardsConsFunction() {
         //    laoding:false,
         //    listFilter: tab,
         //  })
-        // setfilterText(key);
+        addList(tab);
         setsum(response.data.sum);
         setdataProduct(response.data.autos);
         console.log(response.data);
@@ -3426,7 +3473,7 @@ function ComFilterCardsConsFunction() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "cadre-centre",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
-              children: " Example display APIx cpanels=js"
+              children: " Example display  cpanel"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CardswithDataFunc__WEBPACK_IMPORTED_MODULE_2__["default"], {
               products: dataProduct,
               ker: filterText
