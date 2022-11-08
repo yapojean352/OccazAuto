@@ -4820,7 +4820,7 @@ function Root() {
             component: _pages_Avendre__WEBPACK_IMPORTED_MODULE_4__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/Occaz-Auto/vehicule-usager/",
+            path: "/Occaz-Auto/vehicule-usager",
             component: _pages_ApifuncDatas__WEBPACK_IMPORTED_MODULE_9__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,

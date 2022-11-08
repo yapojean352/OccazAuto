@@ -70,7 +70,7 @@ function Root() {
                  
                       <Route exact path='/Occaz-Auto/'  component={Home} />
                       <Route exact path='/Occaz-Auto/A-vendre/'  component={Avendre} />
-                       <Route exact path='/Occaz-Auto/vehicule-usager/'   component={ApifuncDatas} />
+                       <Route exact path='/Occaz-Auto/vehicule-usager'   component={ApifuncDatas} />
                        {/* <Route  path='/OccazAuto/vehicule-usager/:id'  component={Product} /> */}
                        {/* <Route exact path='/OccazAuto/:carrosserie'  component={Product} /> */}
                       {/*<Route exact path='/OccazAuto/signUp'  component={SignUp} />*/}
