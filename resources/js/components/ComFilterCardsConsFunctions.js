@@ -69,7 +69,7 @@ var removeKey=(keyD)=>{
     window.location.href=removeParam('carrosserie',window.location.href)
   }
   if(keyD =='all'){
-    window.location.href="https://bsoccasionsplus.ca/Occaz-Auto/Financement";
+    window.location.href="https://bsoccasionsplus.ca/Occaz-Auto/vehicule-usager";
     addList([]);
   }
   addList(newArray);

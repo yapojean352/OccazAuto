@@ -3276,7 +3276,7 @@ function ComFilterCardsConsFunction() {
     }
 
     if (keyD == 'all') {
-      window.location.href = "https://bsoccasionsplus.ca/Occaz-Auto/Financement";
+      window.location.href = "https://bsoccasionsplus.ca/Occaz-Auto/vehicule-usager";
       addList([]);
     }
 
@@ -4821,11 +4821,11 @@ function Root() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/Occaz-Auto/vehicule-usager/",
-            component: _pages_product__WEBPACK_IMPORTED_MODULE_5__["default"]
+            component: _pages_ApifuncDatas__WEBPACK_IMPORTED_MODULE_9__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/Occaz-Auto/financement",
-            component: _pages_ApifuncDatas__WEBPACK_IMPORTED_MODULE_9__["default"]
+            component: _pages_product__WEBPACK_IMPORTED_MODULE_5__["default"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/Occaz-Auto/:id",

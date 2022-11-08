@@ -70,11 +70,11 @@ function Root() {
                  
                       <Route exact path='/Occaz-Auto/'  component={Home} />
                       <Route exact path='/Occaz-Auto/A-vendre/'  component={Avendre} />
-                       <Route exact path='/Occaz-Auto/vehicule-usager/'   component={Product} />
+                       <Route exact path='/Occaz-Auto/vehicule-usager/'   component={ApifuncDatas} />
                        {/* <Route  path='/OccazAuto/vehicule-usager/:id'  component={Product} /> */}
                        {/* <Route exact path='/OccazAuto/:carrosserie'  component={Product} /> */}
                       {/*<Route exact path='/OccazAuto/signUp'  component={SignUp} />*/}
-                      <Route exact path='/Occaz-Auto/financement'  component={ApifuncDatas} />
+                      <Route exact path='/Occaz-Auto/financement'  component={Product} />
                        {/* <Route exact path='/OccazAuto/vehicule-usager/:marque-:modele-:id' component={Singlepage}  /> */}
                       <Route exact  path='/Occaz-Auto/:id'   component={Singlepage}/>    
                  
