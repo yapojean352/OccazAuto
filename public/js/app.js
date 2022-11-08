@@ -3757,13 +3757,13 @@ function HeroSection() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "btns-hero",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Boutton__WEBPACK_IMPORTED_MODULE_1__.Boutton, {
-        lien: "/OccazAuto/vehicule-usager",
+        lien: "/Occaz-Auto/vehicule-usager",
         className: "btns",
         buttonStyle: "btn--outline",
         buttonSize: "btn--large",
         children: "Trouver votre Auto"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Boutton__WEBPACK_IMPORTED_MODULE_1__.Boutton, {
-        lien: "/OccazAuto/A-vendre",
+        lien: "/Occaz-Auto/A-vendre",
         className: "btns",
         buttonStyle: "btn--primary",
         buttonSize: "btn--large",
