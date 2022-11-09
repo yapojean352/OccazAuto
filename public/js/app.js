@@ -3779,184 +3779,6 @@ function HeroSection() {
 
 /***/ }),
 
-/***/ "./resources/js/components/Lipucefilter.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Lipucefilter.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _FiltreTest_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FiltreTest.css */ "./resources/js/components/FiltreTest.css");
-/* harmony import */ var _Lipucemodele__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Lipucemodele */ "./resources/js/components/Lipucemodele.js");
-/* harmony import */ var _Lipucemodele__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Lipucemodele__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Lipucefilter_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Lipucefilter.css */ "./resources/js/components/Lipucefilter.css");
-/* harmony import */ var _FunListModele__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FunListModele */ "./resources/js/components/FunListModele.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-/**  gerer le donnees marque et modele
- * composant lipucemodele affichera les donnees
- */
-
-
-
-
-function Lipucefilter(props) {
-  var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      click = _useState2[0],
-      setClick = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      clickP = _useState4[0],
-      setClickP = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-      _useState6 = _slicedToArray(_useState5, 2),
-      datas = _useState6[0],
-      setData = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState8 = _slicedToArray(_useState7, 2),
-      counter = _useState8[0],
-      setCounter = _useState8[1];
-
-  var handleClick = function handleClick() {
-    return setClick(!click);
-  }; //fonction de rappel dans le parent ,pour recuperer le ste de l enfant
-
-
-  var answer_array = window.location.search.split('&');
-
-  var dataf = function dataf(sjs) {
-    setData(sjs);
-    setClickP(!clickP);
-    props.fParent(sjs);
-    console.log(window.location.search);
-    history.push( true ? window.location.pathname + "?modele=".concat(sjs, " ") : 0);
-  };
-
-  var old_data;
-  var old_datas = [];
-  var total = 0;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    // Met à jour le counter via total
-    setCounter(total);
-  });
-  /**filter subcategory
-    * @return array filter
-    */
-
-  var result = props.dataS.auto.reduce(function (r, a) {
-    r[a.modele] = r[a.modele] || [];
-    r[a.modele].push(a);
-    return r;
-  }, Object.create(null));
-
-  if (Object.keys(result).length == 6) {
-    window.localStorage.setItem("old-data", JSON.stringify(result));
-    localStorage.setItem("ARRAY", old_data);
-  }
-
-  old_data = window.localStorage.getItem("old-data");
-  old_datas.push(JSON.parse(old_data));
-  var dataD = clickP == false ? result : result;
-  localStorage.removeItem("ARRAY");
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-        className: "menu",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
-          className: counter == 0 ? 'fer' : 'ou',
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "menubp",
-            onClick: handleClick,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "oCbrand",
-              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                  className: "icon_img",
-                  src: "public/images/".concat(props.marquename, "-icon.jpg")
-                })
-              }), props.marquename, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: click ? 'O' : 'C'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                id: "make-1875",
-                name: "makeOpen[]",
-                type: "checkbox",
-                "class": "tv-nested",
-                value: "1875"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-              className: "count",
-              children: click ? '' : counter
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
-            className: click ? 'afficher' : 'masquer',
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
-              className: "subCat",
-              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "menubp",
-                children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  children: "Tout choisir------------------ "
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-                  children: ["(", counter, ")"]
-                })]
-              })]
-            }), Object.keys(dataD).map(function (item, index) {
-              if (dataD[item][0].marque === props.marquename) {
-                total = total + dataD[item].length;
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                  className: "subCat",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                    className: "menubp",
-                    onClick: function onClick(e) {
-                      return dataf(item);
-                    },
-                    children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-                      children: [item, " "]
-                    }), dataD[item].length]
-                  })
-                }, index);
-              }
-            })]
-          })]
-        })
-      })
-    })
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Lipucefilter);
-
-/***/ }),
-
 /***/ "./resources/js/components/LipucefilterFunction.js":
 /*!*********************************************************!*\
   !*** ./resources/js/components/LipucefilterFunction.js ***!
@@ -4136,7 +3958,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Cards_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.css */ "./resources/js/components/Cards.css");
-/* harmony import */ var _Lipucefilter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Lipucefilter */ "./resources/js/components/Lipucefilter.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './Lipucefilter'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _Lipucefilterdata_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Lipucefilterdata.css */ "./resources/js/components/Lipucefilterdata.css");
 /* harmony import */ var _TypeCarroFilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TypeCarroFilter */ "./resources/js/components/TypeCarroFilter.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -4276,7 +4098,7 @@ var Lipucefilterdata = /*#__PURE__*/function (_React$Component) {
       } else {
         contenHTML = this.state.category.map(function (cate, i) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Lipucefilter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module './Lipucefilter'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
               dataS: _this3.props.products,
               fParent: _this3.onParent,
               subCat: _this3.state.subcategory,
@@ -4330,7 +4152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Cards_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.css */ "./resources/js/components/Cards.css");
-/* harmony import */ var _Lipucefilter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Lipucefilter */ "./resources/js/components/Lipucefilter.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './Lipucefilter'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _Lipucefilterdata_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Lipucefilterdata.css */ "./resources/js/components/Lipucefilterdata.css");
 /* harmony import */ var _LipucefilterFunction__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LipucefilterFunction */ "./resources/js/components/LipucefilterFunction.js");
 /* harmony import */ var _TypeCarroFilterFunction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TypeCarroFilterFunction */ "./resources/js/components/TypeCarroFilterFunction.js");
