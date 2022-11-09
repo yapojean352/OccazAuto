@@ -55,7 +55,7 @@ old_datas.push(JSON.parse(old_data));
         <li className={counter== 0 ? 'fer':'ou'}><div className="menubp" 
          onClick={handleClick}>
       <div className='oCbrand'> <span ><img className="icon_img"
-           src={`public/images/${props.marquename}.jpg`}/></span>
+           src={`public/images/${props.marquename}-icon.jpg`}/></span>
           {props.marquename} 
         <span className={ click ? 'O':'C'}></span><input id="make-1875" 
             name="makeOpen[]" type="checkbox" class="tv-nested" value="1875"/>
