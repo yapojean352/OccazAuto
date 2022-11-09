@@ -20,9 +20,9 @@
 .btn-subCat{
     background-color: red;
 }
-.icon_img {
-    width: 20px;
-    height: 20px;
+.icon_img , .Bmw , .Audi , .Mazda {
+    width: 25px;
+    height: 25px;
     margin-right: 15px;
 }
 .oCbrand{
