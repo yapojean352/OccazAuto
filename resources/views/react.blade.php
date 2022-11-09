@@ -22,6 +22,7 @@
         </style>
 <script src="{{ asset('public/js/FilterScrollactive.js') }}"></script>
     <script src="{{ asset('public/js/ScrollMenu.js') }}"></script>
+    <script src="{{ asset('public/js/filter.js') }}"></script>
 <script src="https://use.fontawesome.com/ee009214ac.js"></script>
     </head>
     <body class="antialiased">
