@@ -3902,7 +3902,7 @@ function Lipucefilter(props) {
               children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                   className: "icon_img",
-                  src: "public/images/".concat(props.marquename, "-ICON.jpg")
+                  src: "public/images/".concat(props.marquename, ".jpg")
                 })
               }), props.marquename, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                 className: click ? 'O' : 'C'
