@@ -165,7 +165,7 @@ axios.get(`${baseUrl}`,{CancelToken:CancelToken.token}).then(response =>{
     <div className='catalogue-container'>
         <div className='row'>
          <div className='filters-colunns'>
-              <span className="filter-icon"><h3><i className="fa fa-sliders">  {listFilter.length} Filter</i> </h3></span>
+              <span className="filter-icon"><h3><i className="fa fa-sliders">  <span className="filterText">Filter</span></i> </h3></span>
             <div className="filter-produit" >
               <div>
               <LipucefilterdataFunc dataf={dataProduct} funT={searchT} 

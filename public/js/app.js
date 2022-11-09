@@ -3413,7 +3413,10 @@ function ComFilterCardsConsFunction() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h3", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("i", {
                 className: "fa fa-sliders",
-                children: ["  ", listFilter.length, " Filter"]
+                children: ["  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                  className: "filterText",
+                  children: "Filter"
+                })]
               }), " "]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
