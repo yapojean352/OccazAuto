@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CardItems from './CardItems';
 import CardswithDataFunc from './CardswithDataFunc';
 import "./funccom.css";
+import "./ComFilterCardsConsFunctions.css";
 import LipucefilterdataFunc from './LipucefilterdataFunc';
 // const api=axios.create({
 //   baseUrl:"https://bsoccasionsplus.ca/Occaz-Auto/api/list/all"

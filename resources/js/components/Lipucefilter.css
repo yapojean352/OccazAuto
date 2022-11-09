@@ -9,6 +9,31 @@
 .O , .C{
     float: right;
 }
+.menu  li > ul > li{
+    margin: 5px;
+}
+.menu  li > ul > li *{
+    background-color: rgb(136, 255, 0);
+    margin: 2px;
+
+}
+.btn-subCat{
+    background-color: red;
+}
+.icon_img ,.AUDI ,.BMW{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+.oCbrand{
+    display: flex;
+    flex-direction: row;
+}
+.oCbrand span{
+    display: block;
+position: relative;
+height: 30px;
+}
 /* .menubf{
     display: flex;
     flex-direction: row;
@@ -36,3 +61,8 @@
     cursor: pointer;
     width: calc(100% - 20px);
 }
+ /*** ecran petit p************************************/
+ @media screen and (max-width:768px) {
+
+    
+ }

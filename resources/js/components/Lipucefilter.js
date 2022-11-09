@@ -54,7 +54,7 @@ old_datas.push(JSON.parse(old_data));
      <ul className="menu" >
         <li className={counter== 0 ? 'fer':'ou'}><div className="menubp" 
          onClick={handleClick}>
-      <div className='oCbrand'> <span ><img className={props.marquename}
+      <div className='oCbrand'> <span ><img className="icon_img"
            src={`public/images/${props.marquename}-ICON.jpg`}/></span>
           {props.marquename} 
         <span className={ click ? 'O':'C'}></span><input id="make-1875" 
@@ -63,7 +63,7 @@ old_datas.push(JSON.parse(old_data));
             <span className='count'>{ click ? '':counter}</span></div>
           <ul className={click ? 'afficher':'masquer'}>
           <li   className='subCat'> <div className="menubp"> <button 
-                  >Tout choisir------------------ </button>({counter})</div></li>
+                  >Tout choisir------------------ </button><span>({counter})</span></div></li>
                 {Object.keys(dataD).map((item,index) => {
                   if(dataD[item][0].marque===props.marquename  ){ 
                  total=total+dataD[item].length

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css' ;
 import { Link } from "react-router-dom";
-const STYLES=['btn--primary','btn--outline']
+const STYLES=['btn--primary','btn--outline','btns--bg']
 const SIZES =['btn--medium','btn--large']
 //gerer la taille des buttons
 //les valeur a recevoir du parent passer en parametre ou defaut(children)

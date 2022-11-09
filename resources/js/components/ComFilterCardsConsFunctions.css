@@ -1,0 +1,18 @@
+
+ /*** ecran petit p************************************/
+ @media screen and (max-width:768px) {
+    .filter-produit{
+        background-color: rgb(160, 122, 122);
+       display: none;
+    }
+    .filter-open{
+       display: block;
+    }
+    .filterText{
+        display: none;
+    }
+    .filter-icon .fa-sliders{
+        cursor: pointer;
+        background-color: #fff;
+    }
+ }
