@@ -3754,7 +3754,7 @@ function HeroSection() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "heros-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      children: "ACHETEZ VOTRE AUTO api "
+      children: "ACHETEZ VOTRE AUTO  "
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
       children: " 100% EN LIGNE"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -10267,7 +10267,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "video{\n    -o-object-fit: cover;\n       object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: fixed;\nz-index: -1;\n}\n.btns-hero{\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    flex-basis: 50%;\n  justify-content: center;\n  background-color: rgb(136, 247, 102);\n}\n.btn{\n  margin: 5px;\n  flex-basis: calc(50%-10px);\n}\n.heros-container{\n    /* background-image: url('images/img-home.jpg') center center/cover no-repeat; */\n    min-height: 750px;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);\n    background: linear-gradient(90deg, #18A857 0%, #18A857 100%);\n    padding-top: 100px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "video{\n    -o-object-fit: cover;\n       object-fit: cover;\n    width: 100%;\n    height: 100%;\n    position: fixed;\nz-index: -1;\n}\n.btns-hero{\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    flex-basis: 50%;\n  justify-content: center;\n}\n.btn{\n  margin: 5px;\n  flex-basis: calc(50%-10px);\n}\n.heros-container{\n    /* background-image: url('images/img-home.jpg') center center/cover no-repeat; */\n    min-height: 750px;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);\n    background: linear-gradient(90deg, #18A857 0%, #18A857 100%);\n    padding-top: 100px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
