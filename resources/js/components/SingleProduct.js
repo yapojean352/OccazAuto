@@ -8,6 +8,7 @@ function SingleProduct(props) {
   var slideIndex=1;
   const [nf, setNf] = useState(0);
   var sliders=(n)=>{
+    console.log(n);
 var i;
 var x = document.getElementsByClassName("mySlides");
 if (n > x.length) {slideIndex = 1}

@@ -4977,6 +4977,7 @@ function SingleProduct(props) {
       setNf = _useState2[1];
 
   var sliders = function sliders(n) {
+    console.log(n);
     var i;
     var x = document.getElementsByClassName("mySlides");
 
