@@ -39,11 +39,11 @@ x[slideIndex-1].style.display = "block";
                  <button className="w3-button w3-black w3-display-right" onClick={(e)=>slidersPlus(1)}>&#10095;</button>
                  </div>
                 </div>
-                <div className='imgSlide-card w3-content w3-display-container'>
-             
-            
-                
-               
+                <div className='imgSlide-card'>
+                {props.dataImg.map((imgk)=>{
+                  return(<div className='imgSlide-card'> <img src={`public/images/${imgk.imageUrl}`}/> 
+                 </div>)
+                })} 
                 </div>
                  <div className="overlay-container">
                 

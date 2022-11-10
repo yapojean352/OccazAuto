@@ -5036,7 +5036,15 @@ function SingleProduct(props) {
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "imgSlide-card w3-content w3-display-container"
+          className: "imgSlide-card",
+          children: props.dataImg.map(function (imgk) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "imgSlide-card",
+              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: "public/images/".concat(imgk.imageUrl)
+              })]
+            });
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "overlay-container",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
@@ -10495,7 +10503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".singleProduct_info{\r\n    background-color: rgb(118, 253, 100);\r\n    display: flex;\r\n    flex-direction: row; \r\n    flex-wrap: wrap; \r\n    flex-grow: 1;\r\n    width: 50%; \r\n}\r\n.singleProduct_info>*{\r\n  \r\n    display: flex;\r\n    margin: 10px;\r\n    padding: 10px;\r\n    background-color: #fff;\r\n    flex-direction: column;\r\n    flex-basis:calc(33.33% - 20px);\r\n}\r\n.img-container{\r\n    display: flex;\r\n    justify-content: center;\r\n    background-color: rgb(0, 0, 0);\r\n    height: 500px;\r\n    position: relative;\r\n}\r\n.btn-container{\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    position: absolute;\r\n    top:50%;\r\n}\r\n.w3-button{\r\n    z-index: 9999999;\r\n    color: rgb(7, 1, 1);\r\n    background: rgba(215, 215, 215, 0.717);\r\n    width: 50px;\r\n    height: 50px;\r\n    font-size: 2rem;\r\n    cursor: pointer;\r\n}\r\n.img-container img{\r\n    background-color: #cccccc;\r\n    height: 500px;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n\r\n}\r\n.imgSlide{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n.imgSlide-card{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    margin: 20px;\r\n    border: 2px solid red;\r\n    height: 100px;\r\n}\r\n.mySlides {display:none;}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".singleProduct_info{\r\n    background-color: rgb(118, 253, 100);\r\n    display: flex;\r\n    flex-direction: row; \r\n    flex-wrap: wrap; \r\n    flex-grow: 1;\r\n    width: 50%; \r\n}\r\n.singleProduct_info>*{\r\n  \r\n    display: flex;\r\n    margin: 10px;\r\n    padding: 10px;\r\n    background-color: #fff;\r\n    flex-direction: column;\r\n    flex-basis:calc(33.33% - 20px);\r\n}\r\n.img-container{\r\n    display: flex;\r\n    justify-content: center;\r\n    background-color: rgb(0, 0, 0);\r\n    height: 500px;\r\n    position: relative;\r\n}\r\n.btn-container{\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    position: absolute;\r\n    top:50%;\r\n}\r\n.w3-button{\r\n    z-index: 9999999;\r\n    color: rgb(7, 1, 1);\r\n    background: rgba(215, 215, 215, 0.717);\r\n    width: 50px;\r\n    height: 50px;\r\n    font-size: 2rem;\r\n    cursor: pointer;\r\n}\r\n.img-container img{\r\n    background-color: #cccccc;\r\n    height: 500px;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n\r\n}\r\n.imgSlide{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n.imgSlide-card{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    margin: 10px;\r\n    height: 50px;\r\n}\r\n.mySlides {display:none;}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
