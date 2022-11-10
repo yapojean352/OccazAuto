@@ -4946,6 +4946,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _SingleProduct_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SingleProduct.css */ "./resources/js/components/SingleProduct.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 /* composant items de chaque auto
@@ -4956,27 +4969,74 @@ qui recoit les props (infos) lorsque cet composant est utilisé
 
 
 function SingleProduct(props) {
+  var slideIndex = 1;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      nf = _useState2[0],
+      setNf = _useState2[1];
+
+  var sliders = function sliders(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+
+    if (n > x.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = x.length;
+    }
+
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+
+    x[slideIndex - 1].style.display = "block";
+  };
+
+  var slidersPlus = function slidersPlus(n) {
+    // setNf(n);
+    sliders(slideIndex += n);
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Met à jou le counter via total
+    sliders(1);
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     id: "un-item",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
       className: "cards__item container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "cards__item__link",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "img-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "public/images/".concat(props.dataImg[0].imageUrl)
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "imgSlide-card",
-          children: props.dataImg.map(function (imgk) {
+          children: [props.dataImg.map(function (imgk) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "imgSlide",
+              className: "mySlides",
               children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                 src: "public/images/".concat(imgk.imageUrl)
               })]
             });
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "btn-container",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "w3-button w3-black w3-display-left",
+              onClick: function onClick(e) {
+                return slidersPlus(-1);
+              },
+              children: "\u276E"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "w3-button w3-black w3-display-right",
+              onClick: function onClick(e) {
+                return slidersPlus(1);
+              },
+              children: "\u276F"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "imgSlide-card w3-content w3-display-container"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "overlay-container",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
@@ -10435,7 +10495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".singleProduct_info{\r\n    background-color: rgb(118, 253, 100);\r\n    display: flex;\r\n    flex-direction: row; \r\n    flex-wrap: wrap; \r\n    flex-grow: 1;\r\n    width: 50%; \r\n}\r\n.singleProduct_info>*{\r\n  \r\n    display: flex;\r\n    margin: 10px;\r\n    padding: 10px;\r\n    background-color: #fff;\r\n    flex-direction: column;\r\n    flex-basis:calc(33.33% - 20px);\r\n}\r\n.img-container{\r\n    display: flex;\r\n    justify-content: center;\r\n    background-color: rgb(0, 0, 0);\r\n    height: 500px;\r\n}\r\n.img-container img{\r\n    background-color: #cccccc;\r\n    height: 500px;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n\r\n}\r\n.imgSlide{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n.imgSlide-card{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    margin: 20px;\r\n    border: 2px solid red;\r\n    height: 50px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".singleProduct_info{\r\n    background-color: rgb(118, 253, 100);\r\n    display: flex;\r\n    flex-direction: row; \r\n    flex-wrap: wrap; \r\n    flex-grow: 1;\r\n    width: 50%; \r\n}\r\n.singleProduct_info>*{\r\n  \r\n    display: flex;\r\n    margin: 10px;\r\n    padding: 10px;\r\n    background-color: #fff;\r\n    flex-direction: column;\r\n    flex-basis:calc(33.33% - 20px);\r\n}\r\n.img-container{\r\n    display: flex;\r\n    justify-content: center;\r\n    background-color: rgb(0, 0, 0);\r\n    height: 500px;\r\n    position: relative;\r\n}\r\n.btn-container{\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    position: absolute;\r\n    top:50%;\r\n}\r\n.w3-button{\r\n    z-index: 9999999;\r\n    color: rgb(7, 1, 1);\r\n    background: rgba(215, 215, 215, 0.717);\r\n    width: 50px;\r\n    height: 50px;\r\n    font-size: 2rem;\r\n    cursor: pointer;\r\n}\r\n.img-container img{\r\n    background-color: #cccccc;\r\n    height: 500px;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n\r\n}\r\n.imgSlide{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n.imgSlide-card{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    margin: 20px;\r\n    border: 2px solid red;\r\n    height: 100px;\r\n}\r\n.mySlides {display:none;}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
