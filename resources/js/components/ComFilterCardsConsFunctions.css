@@ -9,7 +9,7 @@
        display: block;
     }
     .filterText{
-        display: none;
+      
     }
     .filter-icon .fa-sliders{
         cursor: pointer;

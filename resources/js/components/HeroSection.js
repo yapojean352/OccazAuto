@@ -10,7 +10,7 @@ function HeroSection() {
             <div className='btns-hero'>
                 <Boutton lien="/Occaz-Auto/vehicule-usager" className='btns' buttonStyle='btn--outline'
                 buttonSize='btn--large'>Trouver votre Auto</Boutton>
-                 <Boutton lien="/Occaz-Auto/A-vendre" className='btns' buttonStyle='btn--primary'
+                 <Boutton lien="/Occaz-Auto/A-vendre" className='btns' buttonStyle='btns--bg'
                 buttonSize='btn--large'>Vendre votre Auto</Boutton>
             </div>  
         </div>

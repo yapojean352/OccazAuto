@@ -97,9 +97,13 @@
 
 }
 .fa-sliders{
-    font-size:3rem;
+    font-size:1.7rem;
     color: green;
+    font-weight: lighter;
     /* background-color: rgb(7, 116, 21); */
+}
+.filterText{
+    font-size:1.3rem;
 }
 .listing-column{
     /* min-width:75%; */
